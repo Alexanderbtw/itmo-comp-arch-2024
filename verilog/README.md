@@ -10,8 +10,8 @@
 
 ### Запуск симуляции с помощью симулятора Icarus Verilog
 ```
-$ iverilog structural.v -s testbench
-$ ./a.out
+$ iverilog structural_testbench.v
+$ vvp a.out
 ```
 
 ### Другие интересные материалы по Верилогу
