@@ -8,6 +8,7 @@
 
 * [ДЗ1](./hw1/statement.md)
 * [ДЗ2](./hw2/statement.md)
+* [ДЗ3](./hw3/statement.md)
 
 ## Материалы к лекциям
 
