@@ -1,0 +1,2389 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2009.vpi";
+S_0x13c212d10 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x13c206c40 .scope module, "tester" "tester" 3 17;
+ .timescale 0 0;
+v0x13c226ff0_0 .var "a", 1 0;
+v0x13c120bb0_0 .net "any_out", 1 0, L_0x13af8fa30;  1 drivers
+v0x13c120c40_0 .var "b", 1 0;
+v0x13c120dd0_0 .net "consensus_out", 1 0, L_0x13c132720;  1 drivers
+v0x13c120e60_0 .var "errors", 31 0;
+v0x13c120ef0_0 .var "i", 31 0;
+v0x13c120f80_0 .net "max_out", 1 0, L_0x13af89dc0;  1 drivers
+v0x13c121010_0 .net "min_out", 1 0, L_0x13c12e7c0;  1 drivers
+v0x13c1210a0_0 .net "out", 1 0, v0x13c226ec0_0;  1 drivers
+v0x13c1211b0_0 .var "oute", 1 0;
+v0x13c121240 .array "testvectors", 8 0, 5 0;
+v0x13c1212d0_0 .var "vectornum", 31 0;
+v0x13c121360_0 .var "verdict", 0 0;
+S_0x12b907f00 .scope module, "any_to_test" "ternary_any" 3 26, 4 217 0, S_0x13c206c40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "a";
+    .port_info 1 /INPUT 2 "b";
+    .port_info 2 /OUTPUT 2 "out";
+v0x13c218450_0 .net "a", 1 0, v0x13c226ff0_0;  1 drivers
+RS_0x120008850 .resolv tri, L_0x13af8a9b0, L_0x13af8aa80;
+v0x13c218500_0 .net8 "a_minus", 0 0, RS_0x120008850;  2 drivers, strength-aware
+RS_0x120008b50 .resolv tri, L_0x13af8b570, L_0x13af8b620;
+v0x13c2185a0_0 .net8 "a_plus", 0 0, RS_0x120008b50;  2 drivers, strength-aware
+RS_0x120008e50 .resolv tri, L_0x13af8af00, L_0x13af8aff0;
+v0x13c218650_0 .net8 "a_zero", 0 0, RS_0x120008e50;  2 drivers, strength-aware
+v0x13c2186e0_0 .net "b", 1 0, v0x13c120c40_0;  1 drivers
+RS_0x120009450 .resolv tri, L_0x13af8c170, L_0x13af8c240;
+v0x13c2187b0_0 .net8 "b_minus", 0 0, RS_0x120009450;  2 drivers, strength-aware
+RS_0x120009750 .resolv tri, L_0x13af8cd30, L_0x13af8ce00;
+v0x13c218840_0 .net8 "b_plus", 0 0, RS_0x120009750;  2 drivers, strength-aware
+RS_0x120009a50 .resolv tri, L_0x13af8c6c0, L_0x13af8c7b0;
+v0x13c2188d0_0 .net8 "b_zero", 0 0, RS_0x120009a50;  2 drivers, strength-aware
+RS_0x120008040 .resolv tri, L_0x13af8d560, L_0x13af8d650;
+v0x13c218960_0 .net8 "minus_any", 0 0, RS_0x120008040;  2 drivers, strength-aware
+RS_0x12000a1a0 .resolv tri, L_0x13af8f520, L_0x13af8f690;
+v0x13c218a70_0 .net8 "minus_or_plus", 0 0, RS_0x12000a1a0;  2 drivers, strength-aware
+RS_0x1200083a0 .resolv tri, L_0x13af8e800, L_0x13af8e930;
+v0x13c218b00_0 .net8 "not_minus_any", 0 0, RS_0x1200083a0;  2 drivers, strength-aware
+RS_0x120008070 .resolv tri, L_0x13af8de90, L_0x13af8e0c0;
+v0x13c218b90_0 .net8 "not_plus_any", 0 0, RS_0x120008070;  2 drivers, strength-aware
+v0x13c218c20_0 .net "out", 1 0, L_0x13af8fa30;  alias, 1 drivers
+RS_0x1200081f0 .resolv tri, L_0x13af8e660, L_0x13af8e730;
+v0x13c218cd0_0 .net8 "out_minus", 0 0, RS_0x1200081f0;  2 drivers, strength-aware
+RS_0x120008520 .resolv tri, L_0x13af8edd0, L_0x13af8eea0;
+v0x13c218d60_0 .net8 "out_plus", 0 0, RS_0x120008520;  2 drivers, strength-aware
+RS_0x120009ed0 .resolv tri, L_0x13af8f760, L_0x13af8f850;
+v0x13c218df0_0 .net8 "out_zero", 0 0, RS_0x120009ed0;  2 drivers, strength-aware
+RS_0x120008370 .resolv tri, L_0x13af8dcd0, L_0x13af8ddc0;
+v0x13c218e80_0 .net8 "plus_any", 0 0, RS_0x120008370;  2 drivers, strength-aware
+S_0x12b908110 .scope module, "and_m" "and_gate" 4 238, 4 61 0, S_0x12b907f00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13ae0b0c0_0 .net8 "in1", 0 0, RS_0x120008040;  alias, 2 drivers, strength-aware
+v0x13ae06050_0 .net8 "in2", 0 0, RS_0x120008070;  alias, 2 drivers, strength-aware
+RS_0x1200080d0 .resolv tri, L_0x13af8e190, L_0x13af8e380, L_0x13af8e5b0;
+v0x13ae0b260_0 .net8 "nand_out", 0 0, RS_0x1200080d0;  3 drivers, strength-aware
+v0x13ae0a820_0 .net8 "out", 0 0, RS_0x1200081f0;  alias, 2 drivers, strength-aware
+S_0x12b908320 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x12b908110;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c1271b0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8e190 .functor PMOS 1, L_0x13c1271b0, RS_0x120008040, C4<0>, C4<0>;
+L_0x13af8e380 .functor PMOS 1, L_0x13c1271b0, RS_0x120008070, C4<0>, C4<0>;
+L_0x13c127100 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8e490 .functor NMOS 1, L_0x13c127100, RS_0x120008040, C4<0>, C4<0>;
+L_0x13af8e5b0 .functor NMOS 1, L_0x13af8e490, RS_0x120008070, C4<0>, C4<0>;
+v0x13c208040_0 .net8 "gnd", 0 0, L_0x13c127100;  1 drivers, strength-aware
+v0x13c31db00_0 .net8 "in1", 0 0, RS_0x120008040;  alias, 2 drivers, strength-aware
+v0x13c31dbb0_0 .net8 "in2", 0 0, RS_0x120008070;  alias, 2 drivers, strength-aware
+v0x13c31dc60_0 .net8 "nmos1_out", 0 0, L_0x13af8e490;  1 drivers, strength-aware
+v0x13c31dcf0_0 .net8 "out", 0 0, RS_0x1200080d0;  alias, 3 drivers, strength-aware
+v0x13c31ddc0_0 .net8 "pwr", 0 0, L_0x13c1271b0;  1 drivers, strength-aware
+S_0x13c31de80 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x12b908110;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c127300 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8e660 .functor PMOS 1, L_0x13c127300, RS_0x1200080d0, C4<0>, C4<0>;
+L_0x13c127250 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8e730 .functor NMOS 1, L_0x13c127250, RS_0x1200080d0, C4<0>, C4<0>;
+v0x13c31e090_0 .net8 "gnd", 0 0, L_0x13c127250;  1 drivers, strength-aware
+v0x13c31e140_0 .net8 "in", 0 0, RS_0x1200080d0;  alias, 3 drivers, strength-aware
+v0x13c31e200_0 .net8 "out", 0 0, RS_0x1200081f0;  alias, 2 drivers, strength-aware
+v0x13af6e680_0 .net8 "vdd", 0 0, L_0x13c127300;  1 drivers, strength-aware
+S_0x13ae05160 .scope module, "and_p" "and_gate" 4 244, 4 61 0, S_0x12b907f00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c20dbc0_0 .net8 "in1", 0 0, RS_0x120008370;  alias, 2 drivers, strength-aware
+v0x13c20dc50_0 .net8 "in2", 0 0, RS_0x1200083a0;  alias, 2 drivers, strength-aware
+RS_0x120008400 .resolv tri, L_0x13af8ea00, L_0x13af8eaf0, L_0x13af8ed20;
+v0x13c20dce0_0 .net8 "nand_out", 0 0, RS_0x120008400;  3 drivers, strength-aware
+v0x13c20dd70_0 .net8 "out", 0 0, RS_0x120008520;  alias, 2 drivers, strength-aware
+S_0x13c206db0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13ae05160;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c1275a0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8ea00 .functor PMOS 1, L_0x13c1275a0, RS_0x120008370, C4<0>, C4<0>;
+L_0x13af8eaf0 .functor PMOS 1, L_0x13c1275a0, RS_0x1200083a0, C4<0>, C4<0>;
+L_0x13c1274f0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8ec00 .functor NMOS 1, L_0x13c1274f0, RS_0x120008370, C4<0>, C4<0>;
+L_0x13af8ed20 .functor NMOS 1, L_0x13af8ec00, RS_0x1200083a0, C4<0>, C4<0>;
+v0x13c20b770_0 .net8 "gnd", 0 0, L_0x13c1274f0;  1 drivers, strength-aware
+v0x13c20eeb0_0 .net8 "in1", 0 0, RS_0x120008370;  alias, 2 drivers, strength-aware
+v0x13c213aa0_0 .net8 "in2", 0 0, RS_0x1200083a0;  alias, 2 drivers, strength-aware
+v0x13c2140e0_0 .net8 "nmos1_out", 0 0, L_0x13af8ec00;  1 drivers, strength-aware
+v0x13c213360_0 .net8 "out", 0 0, RS_0x120008400;  alias, 3 drivers, strength-aware
+v0x13c2133f0_0 .net8 "pwr", 0 0, L_0x13c1275a0;  1 drivers, strength-aware
+S_0x13c20a490 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13ae05160;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1276f0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8edd0 .functor PMOS 1, L_0x13c1276f0, RS_0x120008400, C4<0>, C4<0>;
+L_0x13c127640 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8eea0 .functor NMOS 1, L_0x13c127640, RS_0x120008400, C4<0>, C4<0>;
+v0x13c2165d0_0 .net8 "gnd", 0 0, L_0x13c127640;  1 drivers, strength-aware
+v0x13c216660_0 .net8 "in", 0 0, RS_0x120008400;  alias, 3 drivers, strength-aware
+v0x13c20a600_0 .net8 "out", 0 0, RS_0x120008520;  alias, 2 drivers, strength-aware
+v0x13c20a690_0 .net8 "vdd", 0 0, L_0x13c1276f0;  1 drivers, strength-aware
+S_0x13c205bb0 .scope module, "decA" "decode_ternary" 4 223, 4 89 0, S_0x12b907f00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in";
+    .port_info 1 /OUTPUT 1 "is_minus";
+    .port_info 2 /OUTPUT 1 "is_zero";
+    .port_info 3 /OUTPUT 1 "is_plus";
+v0x13af76b90_0 .net "in", 1 0, v0x13c226ff0_0;  alias, 1 drivers
+v0x13af76c20_0 .net8 "is_minus", 0 0, RS_0x120008850;  alias, 2 drivers, strength-aware
+v0x13af76cf0_0 .net8 "is_plus", 0 0, RS_0x120008b50;  alias, 2 drivers, strength-aware
+v0x13af76de0_0 .net8 "is_zero", 0 0, RS_0x120008e50;  alias, 2 drivers, strength-aware
+RS_0x1200086d0 .resolv tri, L_0x13af8a290, L_0x13af8a360;
+v0x13af76eb0_0 .net8 "not_in0", 0 0, RS_0x1200086d0;  2 drivers, strength-aware
+RS_0x1200086a0 .resolv tri, L_0x13af8a010, L_0x13af8a0e0;
+v0x13af76f80_0 .net8 "not_in1", 0 0, RS_0x1200086a0;  2 drivers, strength-aware
+L_0x13af8a1f0 .part v0x13c226ff0_0, 1, 1;
+L_0x13af8a470 .part v0x13c226ff0_0, 0, 1;
+L_0x13af8b0c0 .part v0x13c226ff0_0, 0, 1;
+L_0x13af8b6f0 .part v0x13c226ff0_0, 1, 1;
+S_0x13c205d20 .scope module, "a_minus" "and_gate" 4 105, 4 61 0, S_0x13c205bb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c217130_0 .net8 "in1", 0 0, RS_0x1200086a0;  alias, 2 drivers, strength-aware
+v0x13c2171c0_0 .net8 "in2", 0 0, RS_0x1200086d0;  alias, 2 drivers, strength-aware
+RS_0x120008730 .resolv tri, L_0x13af8a510, L_0x13af8a6c0, L_0x13af76540;
+v0x13c217250_0 .net8 "nand_out", 0 0, RS_0x120008730;  3 drivers, strength-aware
+v0x13c2172e0_0 .net8 "out", 0 0, RS_0x120008850;  alias, 2 drivers, strength-aware
+S_0x13c216940 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c205d20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c1258c0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8a510 .functor PMOS 1, L_0x13c1258c0, RS_0x1200086a0, C4<0>, C4<0>;
+L_0x13af8a6c0 .functor PMOS 1, L_0x13c1258c0, RS_0x1200086d0, C4<0>, C4<0>;
+L_0x13c125810 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8a850 .functor NMOS 1, L_0x13c125810, RS_0x1200086a0, C4<0>, C4<0>;
+L_0x13af76540 .functor NMOS 1, L_0x13af8a850, RS_0x1200086d0, C4<0>, C4<0>;
+v0x13c20de00_0 .net8 "gnd", 0 0, L_0x13c125810;  1 drivers, strength-aware
+v0x13c216ab0_0 .net8 "in1", 0 0, RS_0x1200086a0;  alias, 2 drivers, strength-aware
+v0x13c216b40_0 .net8 "in2", 0 0, RS_0x1200086d0;  alias, 2 drivers, strength-aware
+v0x13c216bd0_0 .net8 "nmos1_out", 0 0, L_0x13af8a850;  1 drivers, strength-aware
+v0x13c216c60_0 .net8 "out", 0 0, RS_0x120008730;  alias, 3 drivers, strength-aware
+v0x13c216cf0_0 .net8 "pwr", 0 0, L_0x13c1258c0;  1 drivers, strength-aware
+S_0x13c216d80 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c205d20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c125a10 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8a9b0 .functor PMOS 1, L_0x13c125a10, RS_0x120008730, C4<0>, C4<0>;
+L_0x13c125960 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8aa80 .functor NMOS 1, L_0x13c125960, RS_0x120008730, C4<0>, C4<0>;
+v0x13c216ef0_0 .net8 "gnd", 0 0, L_0x13c125960;  1 drivers, strength-aware
+v0x13c216f80_0 .net8 "in", 0 0, RS_0x120008730;  alias, 3 drivers, strength-aware
+v0x13c217010_0 .net8 "out", 0 0, RS_0x120008850;  alias, 2 drivers, strength-aware
+v0x13c2170a0_0 .net8 "vdd", 0 0, L_0x13c125a10;  1 drivers, strength-aware
+S_0x13af05f20 .scope module, "a_plus" "and_gate" 4 111, 4 61 0, S_0x13c205bb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13af74e10_0 .net "in1", 0 0, L_0x13af8b6f0;  1 drivers
+v0x13af74ec0_0 .net8 "in2", 0 0, RS_0x1200086d0;  alias, 2 drivers, strength-aware
+RS_0x120008a30 .resolv tri, L_0x13af8b200, L_0x13af8b2f0, L_0x13af8b4c0;
+v0x13af74f50_0 .net8 "nand_out", 0 0, RS_0x120008a30;  3 drivers, strength-aware
+v0x13af75040_0 .net8 "out", 0 0, RS_0x120008b50;  alias, 2 drivers, strength-aware
+S_0x13af080f0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13af05f20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c125e00 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8b200 .functor PMOS 1, L_0x13c125e00, L_0x13af8b6f0, C4<0>, C4<0>;
+L_0x13af8b2f0 .functor PMOS 1, L_0x13c125e00, RS_0x1200086d0, C4<0>, C4<0>;
+L_0x13c125d50 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8b3e0 .functor NMOS 1, L_0x13c125d50, L_0x13af8b6f0, C4<0>, C4<0>;
+L_0x13af8b4c0 .functor NMOS 1, L_0x13af8b3e0, RS_0x1200086d0, C4<0>, C4<0>;
+v0x13af082b0_0 .net8 "gnd", 0 0, L_0x13c125d50;  1 drivers, strength-aware
+v0x13af08340_0 .net "in1", 0 0, L_0x13af8b6f0;  alias, 1 drivers
+v0x13af06930_0 .net8 "in2", 0 0, RS_0x1200086d0;  alias, 2 drivers, strength-aware
+v0x13af06a00_0 .net8 "nmos1_out", 0 0, L_0x13af8b3e0;  1 drivers, strength-aware
+v0x13af06a90_0 .net8 "out", 0 0, RS_0x120008a30;  alias, 3 drivers, strength-aware
+v0x13af06b60_0 .net8 "pwr", 0 0, L_0x13c125e00;  1 drivers, strength-aware
+S_0x13af749b0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13af05f20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c125f50 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8b570 .functor PMOS 1, L_0x13c125f50, RS_0x120008a30, C4<0>, C4<0>;
+L_0x13c125ea0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8b620 .functor NMOS 1, L_0x13c125ea0, RS_0x120008a30, C4<0>, C4<0>;
+v0x13af74b60_0 .net8 "gnd", 0 0, L_0x13c125ea0;  1 drivers, strength-aware
+v0x13af74bf0_0 .net8 "in", 0 0, RS_0x120008a30;  alias, 3 drivers, strength-aware
+v0x13af74cb0_0 .net8 "out", 0 0, RS_0x120008b50;  alias, 2 drivers, strength-aware
+v0x13af74d60_0 .net8 "vdd", 0 0, L_0x13c125f50;  1 drivers, strength-aware
+S_0x13af750f0 .scope module, "a_zero" "and_gate" 4 108, 4 61 0, S_0x13c205bb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13af75e80_0 .net8 "in1", 0 0, RS_0x1200086a0;  alias, 2 drivers, strength-aware
+v0x13af75f10_0 .net "in2", 0 0, L_0x13af8b0c0;  1 drivers
+RS_0x120008d30 .resolv tri, L_0x13af8ab50, L_0x13af8ac40, L_0x13af8ae50;
+v0x13af75fd0_0 .net8 "nand_out", 0 0, RS_0x120008d30;  3 drivers, strength-aware
+v0x13af760c0_0 .net8 "out", 0 0, RS_0x120008e50;  alias, 2 drivers, strength-aware
+S_0x13af75320 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13af750f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c125b60 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8ab50 .functor PMOS 1, L_0x13c125b60, RS_0x1200086a0, C4<0>, C4<0>;
+L_0x13af8ac40 .functor PMOS 1, L_0x13c125b60, L_0x13af8b0c0, C4<0>, C4<0>;
+L_0x13c125ab0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8ad50 .functor NMOS 1, L_0x13c125ab0, RS_0x1200086a0, C4<0>, C4<0>;
+L_0x13af8ae50 .functor NMOS 1, L_0x13af8ad50, L_0x13af8b0c0, C4<0>, C4<0>;
+v0x13af75550_0 .net8 "gnd", 0 0, L_0x13c125ab0;  1 drivers, strength-aware
+v0x13af75600_0 .net8 "in1", 0 0, RS_0x1200086a0;  alias, 2 drivers, strength-aware
+v0x13af756e0_0 .net "in2", 0 0, L_0x13af8b0c0;  alias, 1 drivers
+v0x13af75790_0 .net8 "nmos1_out", 0 0, L_0x13af8ad50;  1 drivers, strength-aware
+v0x13af75820_0 .net8 "out", 0 0, RS_0x120008d30;  alias, 3 drivers, strength-aware
+v0x13af75900_0 .net8 "pwr", 0 0, L_0x13c125b60;  1 drivers, strength-aware
+S_0x13af759d0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13af750f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c125cb0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8af00 .functor PMOS 1, L_0x13c125cb0, RS_0x120008d30, C4<0>, C4<0>;
+L_0x13c125c00 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8aff0 .functor NMOS 1, L_0x13c125c00, RS_0x120008d30, C4<0>, C4<0>;
+v0x13af75bd0_0 .net8 "gnd", 0 0, L_0x13c125c00;  1 drivers, strength-aware
+v0x13af75c60_0 .net8 "in", 0 0, RS_0x120008d30;  alias, 3 drivers, strength-aware
+v0x13af75d20_0 .net8 "out", 0 0, RS_0x120008e50;  alias, 2 drivers, strength-aware
+v0x13af75dd0_0 .net8 "vdd", 0 0, L_0x13c125cb0;  1 drivers, strength-aware
+S_0x13af76170 .scope module, "inv0" "not_gate" 4 102, 4 2 0, S_0x13c205bb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c125770 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8a290 .functor PMOS 1, L_0x13c125770, L_0x13af8a470, C4<0>, C4<0>;
+L_0x13c1256c0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8a360 .functor NMOS 1, L_0x13c1256c0, L_0x13af8a470, C4<0>, C4<0>;
+v0x13af76360_0 .net8 "gnd", 0 0, L_0x13c1256c0;  1 drivers, strength-aware
+v0x13af76410_0 .net "in", 0 0, L_0x13af8a470;  1 drivers
+v0x13af764b0_0 .net8 "out", 0 0, RS_0x1200086d0;  alias, 2 drivers, strength-aware
+v0x13af765c0_0 .net8 "vdd", 0 0, L_0x13c125770;  1 drivers, strength-aware
+S_0x13af76680 .scope module, "inv1" "not_gate" 4 101, 4 2 0, S_0x13c205bb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c125620 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8a010 .functor PMOS 1, L_0x13c125620, L_0x13af8a1f0, C4<0>, C4<0>;
+L_0x13c125570 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8a0e0 .functor NMOS 1, L_0x13c125570, L_0x13af8a1f0, C4<0>, C4<0>;
+v0x13af76870_0 .net8 "gnd", 0 0, L_0x13c125570;  1 drivers, strength-aware
+v0x13af76920_0 .net "in", 0 0, L_0x13af8a1f0;  1 drivers
+v0x13af769c0_0 .net8 "out", 0 0, RS_0x1200086a0;  alias, 2 drivers, strength-aware
+v0x13af76ad0_0 .net8 "vdd", 0 0, L_0x13c125620;  1 drivers, strength-aware
+S_0x13af77010 .scope module, "decB" "decode_ternary" 4 226, 4 89 0, S_0x12b907f00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in";
+    .port_info 1 /OUTPUT 1 "is_minus";
+    .port_info 2 /OUTPUT 1 "is_zero";
+    .port_info 3 /OUTPUT 1 "is_plus";
+v0x13af7ad50_0 .net "in", 1 0, v0x13c120c40_0;  alias, 1 drivers
+v0x13af7ade0_0 .net8 "is_minus", 0 0, RS_0x120009450;  alias, 2 drivers, strength-aware
+v0x13af7aeb0_0 .net8 "is_plus", 0 0, RS_0x120009750;  alias, 2 drivers, strength-aware
+v0x13af7af80_0 .net8 "is_zero", 0 0, RS_0x120009a50;  alias, 2 drivers, strength-aware
+RS_0x1200092d0 .resolv tri, L_0x13af8ba90, L_0x13af8bb60;
+v0x13af7b050_0 .net8 "not_in0", 0 0, RS_0x1200092d0;  2 drivers, strength-aware
+RS_0x1200092a0 .resolv tri, L_0x13af8b810, L_0x13af8b8e0;
+v0x13af7b120_0 .net8 "not_in1", 0 0, RS_0x1200092a0;  2 drivers, strength-aware
+L_0x13af8b9f0 .part v0x13c120c40_0, 1, 1;
+L_0x13af8bc70 .part v0x13c120c40_0, 0, 1;
+L_0x13af8c880 .part v0x13c120c40_0, 0, 1;
+L_0x13af8ced0 .part v0x13c120c40_0, 1, 1;
+S_0x13af77230 .scope module, "a_minus" "and_gate" 4 105, 4 61 0, S_0x13af77010;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13af77fa0_0 .net8 "in1", 0 0, RS_0x1200092a0;  alias, 2 drivers, strength-aware
+v0x13af78050_0 .net8 "in2", 0 0, RS_0x1200092d0;  alias, 2 drivers, strength-aware
+RS_0x120009330 .resolv tri, L_0x13af8bd10, L_0x13af8bec0, L_0x13af8c0c0;
+v0x13af78100_0 .net8 "nand_out", 0 0, RS_0x120009330;  3 drivers, strength-aware
+v0x13af781f0_0 .net8 "out", 0 0, RS_0x120009450;  alias, 2 drivers, strength-aware
+S_0x13af77460 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13af77230;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c126340 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8bd10 .functor PMOS 1, L_0x13c126340, RS_0x1200092a0, C4<0>, C4<0>;
+L_0x13af8bec0 .functor PMOS 1, L_0x13c126340, RS_0x1200092d0, C4<0>, C4<0>;
+L_0x13c126290 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8c050 .functor NMOS 1, L_0x13c126290, RS_0x1200092a0, C4<0>, C4<0>;
+L_0x13af8c0c0 .functor NMOS 1, L_0x13af8c050, RS_0x1200092d0, C4<0>, C4<0>;
+v0x13af776a0_0 .net8 "gnd", 0 0, L_0x13c126290;  1 drivers, strength-aware
+v0x13af77750_0 .net8 "in1", 0 0, RS_0x1200092a0;  alias, 2 drivers, strength-aware
+v0x13af777f0_0 .net8 "in2", 0 0, RS_0x1200092d0;  alias, 2 drivers, strength-aware
+v0x13af778a0_0 .net8 "nmos1_out", 0 0, L_0x13af8c050;  1 drivers, strength-aware
+v0x13af77940_0 .net8 "out", 0 0, RS_0x120009330;  alias, 3 drivers, strength-aware
+v0x13af77a20_0 .net8 "pwr", 0 0, L_0x13c126340;  1 drivers, strength-aware
+S_0x13af77af0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13af77230;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c126490 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8c170 .functor PMOS 1, L_0x13c126490, RS_0x120009330, C4<0>, C4<0>;
+L_0x13c1263e0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8c240 .functor NMOS 1, L_0x13c1263e0, RS_0x120009330, C4<0>, C4<0>;
+v0x13af77cf0_0 .net8 "gnd", 0 0, L_0x13c1263e0;  1 drivers, strength-aware
+v0x13af77d80_0 .net8 "in", 0 0, RS_0x120009330;  alias, 3 drivers, strength-aware
+v0x13af77e40_0 .net8 "out", 0 0, RS_0x120009450;  alias, 2 drivers, strength-aware
+v0x13af77ef0_0 .net8 "vdd", 0 0, L_0x13c126490;  1 drivers, strength-aware
+S_0x13af782a0 .scope module, "a_plus" "and_gate" 4 111, 4 61 0, S_0x13af77010;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13af78ff0_0 .net "in1", 0 0, L_0x13af8ced0;  1 drivers
+v0x13af790a0_0 .net8 "in2", 0 0, RS_0x1200092d0;  alias, 2 drivers, strength-aware
+RS_0x120009630 .resolv tri, L_0x13af8c9c0, L_0x13af8cab0, L_0x13af8cc80;
+v0x13af79130_0 .net8 "nand_out", 0 0, RS_0x120009630;  3 drivers, strength-aware
+v0x13af79220_0 .net8 "out", 0 0, RS_0x120009750;  alias, 2 drivers, strength-aware
+S_0x13af784b0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13af782a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c126880 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8c9c0 .functor PMOS 1, L_0x13c126880, L_0x13af8ced0, C4<0>, C4<0>;
+L_0x13af8cab0 .functor PMOS 1, L_0x13c126880, RS_0x1200092d0, C4<0>, C4<0>;
+L_0x13c1267d0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8cba0 .functor NMOS 1, L_0x13c1267d0, L_0x13af8ced0, C4<0>, C4<0>;
+L_0x13af8cc80 .functor NMOS 1, L_0x13af8cba0, RS_0x1200092d0, C4<0>, C4<0>;
+v0x13af786e0_0 .net8 "gnd", 0 0, L_0x13c1267d0;  1 drivers, strength-aware
+v0x13af78790_0 .net "in1", 0 0, L_0x13af8ced0;  alias, 1 drivers
+v0x13af78830_0 .net8 "in2", 0 0, RS_0x1200092d0;  alias, 2 drivers, strength-aware
+v0x13af78920_0 .net8 "nmos1_out", 0 0, L_0x13af8cba0;  1 drivers, strength-aware
+v0x13af789b0_0 .net8 "out", 0 0, RS_0x120009630;  alias, 3 drivers, strength-aware
+v0x13af78a80_0 .net8 "pwr", 0 0, L_0x13c126880;  1 drivers, strength-aware
+S_0x13af78b40 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13af782a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1269d0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8cd30 .functor PMOS 1, L_0x13c1269d0, RS_0x120009630, C4<0>, C4<0>;
+L_0x13c126920 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8ce00 .functor NMOS 1, L_0x13c126920, RS_0x120009630, C4<0>, C4<0>;
+v0x13af78d40_0 .net8 "gnd", 0 0, L_0x13c126920;  1 drivers, strength-aware
+v0x13af78dd0_0 .net8 "in", 0 0, RS_0x120009630;  alias, 3 drivers, strength-aware
+v0x13af78e90_0 .net8 "out", 0 0, RS_0x120009750;  alias, 2 drivers, strength-aware
+v0x13af78f40_0 .net8 "vdd", 0 0, L_0x13c1269d0;  1 drivers, strength-aware
+S_0x13af792d0 .scope module, "a_zero" "and_gate" 4 108, 4 61 0, S_0x13af77010;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13af7a040_0 .net8 "in1", 0 0, RS_0x1200092a0;  alias, 2 drivers, strength-aware
+v0x13af7a0d0_0 .net "in2", 0 0, L_0x13af8c880;  1 drivers
+RS_0x120009930 .resolv tri, L_0x13af8c310, L_0x13af8c400, L_0x13af8c610;
+v0x13af7a190_0 .net8 "nand_out", 0 0, RS_0x120009930;  3 drivers, strength-aware
+v0x13af7a280_0 .net8 "out", 0 0, RS_0x120009a50;  alias, 2 drivers, strength-aware
+S_0x13af79500 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13af792d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c1265e0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8c310 .functor PMOS 1, L_0x13c1265e0, RS_0x1200092a0, C4<0>, C4<0>;
+L_0x13af8c400 .functor PMOS 1, L_0x13c1265e0, L_0x13af8c880, C4<0>, C4<0>;
+L_0x13c126530 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8c510 .functor NMOS 1, L_0x13c126530, RS_0x1200092a0, C4<0>, C4<0>;
+L_0x13af8c610 .functor NMOS 1, L_0x13af8c510, L_0x13af8c880, C4<0>, C4<0>;
+v0x13af79730_0 .net8 "gnd", 0 0, L_0x13c126530;  1 drivers, strength-aware
+v0x13af797e0_0 .net8 "in1", 0 0, RS_0x1200092a0;  alias, 2 drivers, strength-aware
+v0x13af798c0_0 .net "in2", 0 0, L_0x13af8c880;  alias, 1 drivers
+v0x13af79950_0 .net8 "nmos1_out", 0 0, L_0x13af8c510;  1 drivers, strength-aware
+v0x13af799e0_0 .net8 "out", 0 0, RS_0x120009930;  alias, 3 drivers, strength-aware
+v0x13af79ac0_0 .net8 "pwr", 0 0, L_0x13c1265e0;  1 drivers, strength-aware
+S_0x13af79b90 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13af792d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c126730 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8c6c0 .functor PMOS 1, L_0x13c126730, RS_0x120009930, C4<0>, C4<0>;
+L_0x13c126680 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8c7b0 .functor NMOS 1, L_0x13c126680, RS_0x120009930, C4<0>, C4<0>;
+v0x13af79d90_0 .net8 "gnd", 0 0, L_0x13c126680;  1 drivers, strength-aware
+v0x13af79e20_0 .net8 "in", 0 0, RS_0x120009930;  alias, 3 drivers, strength-aware
+v0x13af79ee0_0 .net8 "out", 0 0, RS_0x120009a50;  alias, 2 drivers, strength-aware
+v0x13af79f90_0 .net8 "vdd", 0 0, L_0x13c126730;  1 drivers, strength-aware
+S_0x13af7a330 .scope module, "inv0" "not_gate" 4 102, 4 2 0, S_0x13af77010;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1261f0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8ba90 .functor PMOS 1, L_0x13c1261f0, L_0x13af8bc70, C4<0>, C4<0>;
+L_0x13c126140 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8bb60 .functor NMOS 1, L_0x13c126140, L_0x13af8bc70, C4<0>, C4<0>;
+v0x13af7a520_0 .net8 "gnd", 0 0, L_0x13c126140;  1 drivers, strength-aware
+v0x13af7a5d0_0 .net "in", 0 0, L_0x13af8bc70;  1 drivers
+v0x13af7a670_0 .net8 "out", 0 0, RS_0x1200092d0;  alias, 2 drivers, strength-aware
+v0x13af7a780_0 .net8 "vdd", 0 0, L_0x13c1261f0;  1 drivers, strength-aware
+S_0x13af7a840 .scope module, "inv1" "not_gate" 4 101, 4 2 0, S_0x13af77010;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1260a0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8b810 .functor PMOS 1, L_0x13c1260a0, L_0x13af8b9f0, C4<0>, C4<0>;
+L_0x13c125ff0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8b8e0 .functor NMOS 1, L_0x13c125ff0, L_0x13af8b9f0, C4<0>, C4<0>;
+v0x13af7aa30_0 .net8 "gnd", 0 0, L_0x13c125ff0;  1 drivers, strength-aware
+v0x13af7aae0_0 .net "in", 0 0, L_0x13af8b9f0;  1 drivers
+v0x13af7ab80_0 .net8 "out", 0 0, RS_0x1200092a0;  alias, 2 drivers, strength-aware
+v0x13af7ac90_0 .net8 "vdd", 0 0, L_0x13c1260a0;  1 drivers, strength-aware
+S_0x13af7b1b0 .scope module, "enc" "encode_ternary" 4 252, 4 114 0, S_0x12b907f00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "is_minus";
+    .port_info 1 /INPUT 1 "is_zero";
+    .port_info 2 /INPUT 1 "is_plus";
+    .port_info 3 /OUTPUT 2 "out";
+L_0x13af8f9a0 .functor BUFZ 1, RS_0x120008520, C4<0>, C4<0>, C4<0>;
+L_0x13af8fbd0 .functor BUFZ 1, RS_0x120009ed0, C4<0>, C4<0>, C4<0>;
+v0x13af7b410_0 .net *"_ivl_3", 0 0, L_0x13af8f9a0;  1 drivers
+v0x13af7b4a0_0 .net *"_ivl_8", 0 0, L_0x13af8fbd0;  1 drivers
+v0x13af7b550_0 .net8 "is_minus", 0 0, RS_0x1200081f0;  alias, 2 drivers, strength-aware
+v0x13af7b640_0 .net8 "is_plus", 0 0, RS_0x120008520;  alias, 2 drivers, strength-aware
+v0x13af7b710_0 .net8 "is_zero", 0 0, RS_0x120009ed0;  alias, 2 drivers, strength-aware
+v0x13af7b7e0_0 .net "out", 1 0, L_0x13af8fa30;  alias, 1 drivers
+L_0x13af8fa30 .concat8 [ 1 1 0 0], L_0x13af8fbd0, L_0x13af8f9a0;
+S_0x13af7b8d0 .scope module, "inv_m" "not_gate" 4 241, 4 2 0, S_0x12b907f00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c127450 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8e800 .functor PMOS 1, L_0x13c127450, RS_0x120008040, C4<0>, C4<0>;
+L_0x13c1273a0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8e930 .functor NMOS 1, L_0x13c1273a0, RS_0x120008040, C4<0>, C4<0>;
+v0x13af7bad0_0 .net8 "gnd", 0 0, L_0x13c1273a0;  1 drivers, strength-aware
+v0x13af7bb80_0 .net8 "in", 0 0, RS_0x120008040;  alias, 2 drivers, strength-aware
+v0x13af7bc60_0 .net8 "out", 0 0, RS_0x1200083a0;  alias, 2 drivers, strength-aware
+v0x13af7bd30_0 .net8 "vdd", 0 0, L_0x13c127450;  1 drivers, strength-aware
+S_0x13af7bde0 .scope module, "inv_p" "not_gate" 4 235, 4 2 0, S_0x12b907f00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c127060 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8de90 .functor PMOS 1, L_0x13c127060, RS_0x120008370, C4<0>, C4<0>;
+L_0x13c126fb0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8e0c0 .functor NMOS 1, L_0x13c126fb0, RS_0x120008370, C4<0>, C4<0>;
+v0x13af7bfd0_0 .net8 "gnd", 0 0, L_0x13c126fb0;  1 drivers, strength-aware
+v0x13af7c080_0 .net8 "in", 0 0, RS_0x120008370;  alias, 2 drivers, strength-aware
+v0x13af7c160_0 .net8 "out", 0 0, RS_0x120008070;  alias, 2 drivers, strength-aware
+v0x13af7c250_0 .net8 "vdd", 0 0, L_0x13c127060;  1 drivers, strength-aware
+S_0x13af7c300 .scope module, "inv_z" "not_gate" 4 250, 4 2 0, S_0x12b907f00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c127ae0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8f760 .functor PMOS 1, L_0x13c127ae0, RS_0x12000a1a0, C4<0>, C4<0>;
+L_0x13c127a30 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8f850 .functor NMOS 1, L_0x13c127a30, RS_0x12000a1a0, C4<0>, C4<0>;
+v0x13af7c4f0_0 .net8 "gnd", 0 0, L_0x13c127a30;  1 drivers, strength-aware
+v0x13af7c5a0_0 .net8 "in", 0 0, RS_0x12000a1a0;  alias, 2 drivers, strength-aware
+v0x13af7c640_0 .net8 "out", 0 0, RS_0x120009ed0;  alias, 2 drivers, strength-aware
+v0x13c31e2b0_0 .net8 "vdd", 0 0, L_0x13c127ae0;  1 drivers, strength-aware
+S_0x13c31e340 .scope module, "or_m" "or_gate" 4 229, 4 75 0, S_0x12b907f00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c31f0e0_0 .net8 "in1", 0 0, RS_0x120008850;  alias, 2 drivers, strength-aware
+v0x13c31f1f0_0 .net8 "in2", 0 0, RS_0x120009450;  alias, 2 drivers, strength-aware
+RS_0x12000a290 .resolv tri, L_0x13af8d1c0, L_0x13af8d390, L_0x13af8d4f0;
+v0x13c31f310_0 .net8 "nor_out", 0 0, RS_0x12000a290;  3 drivers, strength-aware
+v0x13c31f400_0 .net8 "out", 0 0, RS_0x120008040;  alias, 2 drivers, strength-aware
+S_0x13c31e5d0 .scope module, "nor_gate1" "nor_gate" 4 83, 4 43 0, S_0x13c31e340;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c126b20 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8cff0 .functor PMOS 1, L_0x13c126b20, RS_0x120008850, C4<0>, C4<0>;
+L_0x13af8d1c0 .functor PMOS 1, L_0x13af8cff0, RS_0x120009450, C4<0>, C4<0>;
+L_0x13c126a70 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8d390 .functor NMOS 1, L_0x13c126a70, RS_0x120008850, C4<0>, C4<0>;
+L_0x13af8d4f0 .functor NMOS 1, L_0x13c126a70, RS_0x120009450, C4<0>, C4<0>;
+v0x13c31e810_0 .net8 "gnd", 0 0, L_0x13c126a70;  1 drivers, strength-aware
+v0x13c31e8c0_0 .net8 "in1", 0 0, RS_0x120008850;  alias, 2 drivers, strength-aware
+v0x13c31e960_0 .net8 "in2", 0 0, RS_0x120009450;  alias, 2 drivers, strength-aware
+v0x13c31ea10_0 .net8 "out", 0 0, RS_0x12000a290;  alias, 3 drivers, strength-aware
+v0x13c31eaa0_0 .net8 "pmos1_out", 0 0, L_0x13af8cff0;  1 drivers, strength-aware
+v0x13c31eb70_0 .net8 "pwr", 0 0, L_0x13c126b20;  1 drivers, strength-aware
+S_0x13c31ec40 .scope module, "not_gate1" "not_gate" 4 84, 4 2 0, S_0x13c31e340;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c126c70 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8d560 .functor PMOS 1, L_0x13c126c70, RS_0x12000a290, C4<0>, C4<0>;
+L_0x13c126bc0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8d650 .functor NMOS 1, L_0x13c126bc0, RS_0x12000a290, C4<0>, C4<0>;
+v0x13c31ee40_0 .net8 "gnd", 0 0, L_0x13c126bc0;  1 drivers, strength-aware
+v0x13c31eed0_0 .net8 "in", 0 0, RS_0x12000a290;  alias, 3 drivers, strength-aware
+v0x13c31ef90_0 .net8 "out", 0 0, RS_0x120008040;  alias, 2 drivers, strength-aware
+v0x13c31f040_0 .net8 "vdd", 0 0, L_0x13c126c70;  1 drivers, strength-aware
+S_0x13c31f520 .scope module, "or_mp" "or_gate" 4 247, 4 75 0, S_0x12b907f00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c320260_0 .net8 "in1", 0 0, RS_0x1200081f0;  alias, 2 drivers, strength-aware
+v0x13c320370_0 .net8 "in2", 0 0, RS_0x120008520;  alias, 2 drivers, strength-aware
+RS_0x12000a530 .resolv tri, L_0x13af8f180, L_0x13af8f350, L_0x13af8f4b0;
+v0x13c320490_0 .net8 "nor_out", 0 0, RS_0x12000a530;  3 drivers, strength-aware
+v0x13c217370_0 .net8 "out", 0 0, RS_0x12000a1a0;  alias, 2 drivers, strength-aware
+S_0x13c31f730 .scope module, "nor_gate1" "nor_gate" 4 83, 4 43 0, S_0x13c31f520;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c127840 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8ef70 .functor PMOS 1, L_0x13c127840, RS_0x1200081f0, C4<0>, C4<0>;
+L_0x13af8f180 .functor PMOS 1, L_0x13af8ef70, RS_0x120008520, C4<0>, C4<0>;
+L_0x13c127790 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8f350 .functor NMOS 1, L_0x13c127790, RS_0x1200081f0, C4<0>, C4<0>;
+L_0x13af8f4b0 .functor NMOS 1, L_0x13c127790, RS_0x120008520, C4<0>, C4<0>;
+v0x13c31f970_0 .net8 "gnd", 0 0, L_0x13c127790;  1 drivers, strength-aware
+v0x13c31fa20_0 .net8 "in1", 0 0, RS_0x1200081f0;  alias, 2 drivers, strength-aware
+v0x13c31fac0_0 .net8 "in2", 0 0, RS_0x120008520;  alias, 2 drivers, strength-aware
+v0x13c31fb70_0 .net8 "out", 0 0, RS_0x12000a530;  alias, 3 drivers, strength-aware
+v0x13c31fc00_0 .net8 "pmos1_out", 0 0, L_0x13af8ef70;  1 drivers, strength-aware
+v0x13c31fcd0_0 .net8 "pwr", 0 0, L_0x13c127840;  1 drivers, strength-aware
+S_0x13c31fda0 .scope module, "not_gate1" "not_gate" 4 84, 4 2 0, S_0x13c31f520;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c127990 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8f520 .functor PMOS 1, L_0x13c127990, RS_0x12000a530, C4<0>, C4<0>;
+L_0x13c1278e0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8f690 .functor NMOS 1, L_0x13c1278e0, RS_0x12000a530, C4<0>, C4<0>;
+v0x13c31ffa0_0 .net8 "gnd", 0 0, L_0x13c1278e0;  1 drivers, strength-aware
+v0x13c320030_0 .net8 "in", 0 0, RS_0x12000a530;  alias, 3 drivers, strength-aware
+v0x13c3200f0_0 .net8 "out", 0 0, RS_0x12000a1a0;  alias, 2 drivers, strength-aware
+v0x13c3201c0_0 .net8 "vdd", 0 0, L_0x13c127990;  1 drivers, strength-aware
+S_0x13c217400 .scope module, "or_p" "or_gate" 4 232, 4 75 0, S_0x12b907f00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c218010_0 .net8 "in1", 0 0, RS_0x120008b50;  alias, 2 drivers, strength-aware
+v0x13c218120_0 .net8 "in2", 0 0, RS_0x120009750;  alias, 2 drivers, strength-aware
+RS_0x12000a7d0 .resolv tri, L_0x13af8d930, L_0x13af8db00, L_0x13af8dc60;
+v0x13c218240_0 .net8 "nor_out", 0 0, RS_0x12000a7d0;  3 drivers, strength-aware
+v0x13c218330_0 .net8 "out", 0 0, RS_0x120008370;  alias, 2 drivers, strength-aware
+S_0x13c217610 .scope module, "nor_gate1" "nor_gate" 4 83, 4 43 0, S_0x13c217400;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c126dc0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8d720 .functor PMOS 1, L_0x13c126dc0, RS_0x120008b50, C4<0>, C4<0>;
+L_0x13af8d930 .functor PMOS 1, L_0x13af8d720, RS_0x120009750, C4<0>, C4<0>;
+L_0x13c126d10 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8db00 .functor NMOS 1, L_0x13c126d10, RS_0x120008b50, C4<0>, C4<0>;
+L_0x13af8dc60 .functor NMOS 1, L_0x13c126d10, RS_0x120009750, C4<0>, C4<0>;
+v0x13c217820_0 .net8 "gnd", 0 0, L_0x13c126d10;  1 drivers, strength-aware
+v0x13c2178b0_0 .net8 "in1", 0 0, RS_0x120008b50;  alias, 2 drivers, strength-aware
+v0x13c217940_0 .net8 "in2", 0 0, RS_0x120009750;  alias, 2 drivers, strength-aware
+v0x13c2179d0_0 .net8 "out", 0 0, RS_0x12000a7d0;  alias, 3 drivers, strength-aware
+v0x13c217a60_0 .net8 "pmos1_out", 0 0, L_0x13af8d720;  1 drivers, strength-aware
+v0x13c217b30_0 .net8 "pwr", 0 0, L_0x13c126dc0;  1 drivers, strength-aware
+S_0x13c217bc0 .scope module, "not_gate1" "not_gate" 4 84, 4 2 0, S_0x13c217400;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c126f10 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8dcd0 .functor PMOS 1, L_0x13c126f10, RS_0x12000a7d0, C4<0>, C4<0>;
+L_0x13c126e60 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8ddc0 .functor NMOS 1, L_0x13c126e60, RS_0x12000a7d0, C4<0>, C4<0>;
+v0x13c217d80_0 .net8 "gnd", 0 0, L_0x13c126e60;  1 drivers, strength-aware
+v0x13c217e10_0 .net8 "in", 0 0, RS_0x12000a7d0;  alias, 3 drivers, strength-aware
+v0x13c217ec0_0 .net8 "out", 0 0, RS_0x120008370;  alias, 2 drivers, strength-aware
+v0x13c217f70_0 .net8 "vdd", 0 0, L_0x13c126f10;  1 drivers, strength-aware
+S_0x13c219060 .scope module, "consensus_to_test" "ternary_consensus" 3 27, 4 191 0, S_0x13c206c40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "a";
+    .port_info 1 /INPUT 2 "b";
+    .port_info 2 /OUTPUT 2 "out";
+v0x13ae11a30_0 .net "a", 1 0, v0x13c226ff0_0;  alias, 1 drivers
+RS_0x12000ab00 .resolv tri, L_0x13c12ee30, L_0x13c12eea0;
+v0x13ae11ac0_0 .net8 "a_minus", 0 0, RS_0x12000ab00;  2 drivers, strength-aware
+RS_0x12000ae30 .resolv tri, L_0x13c12f890, L_0x13c12f940;
+v0x13ae11b50_0 .net8 "a_plus", 0 0, RS_0x12000ae30;  2 drivers, strength-aware
+RS_0x12000b8b0 .resolv tri, L_0x13c12f290, L_0x13c12f3c0;
+v0x13ae11be0_0 .net8 "a_zero", 0 0, RS_0x12000b8b0;  2 drivers, strength-aware
+v0x13ae11c70_0 .net "b", 1 0, v0x13c120c40_0;  alias, 1 drivers
+RS_0x12000ab30 .resolv tri, L_0x13c130450, L_0x13c130500;
+v0x13ae11d40_0 .net8 "b_minus", 0 0, RS_0x12000ab30;  2 drivers, strength-aware
+RS_0x12000ae60 .resolv tri, L_0x13c130ef0, L_0x13c130fa0;
+v0x13ae11dd0_0 .net8 "b_plus", 0 0, RS_0x12000ae60;  2 drivers, strength-aware
+RS_0x12000c420 .resolv tri, L_0x13c1308f0, L_0x13c130a20;
+v0x13ae11e60_0 .net8 "b_zero", 0 0, RS_0x12000c420;  2 drivers, strength-aware
+RS_0x12000c9c0 .resolv tri, L_0x13c1322f0, L_0x13c132420;
+v0x13ae11ef0_0 .net8 "minus_or_plus", 0 0, RS_0x12000c9c0;  2 drivers, strength-aware
+v0x13ae12000_0 .net "out", 1 0, L_0x13c132720;  alias, 1 drivers
+RS_0x12000acb0 .resolv tri, L_0x13c131630, L_0x13c1316e0;
+v0x13ae12090_0 .net8 "out_minus", 0 0, RS_0x12000acb0;  2 drivers, strength-aware
+RS_0x12000afe0 .resolv tri, L_0x13c131c90, L_0x13c131d40;
+v0x13ae12120_0 .net8 "out_plus", 0 0, RS_0x12000afe0;  2 drivers, strength-aware
+RS_0x12000c870 .resolv tri, L_0x13c1324d0, L_0x13c132580;
+v0x13ae121b0_0 .net8 "out_zero", 0 0, RS_0x12000c870;  2 drivers, strength-aware
+S_0x13c2192a0 .scope module, "and_m" "and_gate" 4 203, 4 61 0, S_0x13c219060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c219fa0_0 .net8 "in1", 0 0, RS_0x12000ab00;  alias, 2 drivers, strength-aware
+v0x13c21a050_0 .net8 "in2", 0 0, RS_0x12000ab30;  alias, 2 drivers, strength-aware
+RS_0x12000ab90 .resolv tri, L_0x13c131170, L_0x13c1312e0, L_0x13c131580;
+v0x13c21a100_0 .net8 "nand_out", 0 0, RS_0x12000ab90;  3 drivers, strength-aware
+v0x13c21a1f0_0 .net8 "out", 0 0, RS_0x12000acb0;  alias, 2 drivers, strength-aware
+S_0x13c2194e0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c2192a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c129130 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c131170 .functor PMOS 1, L_0x13c129130, RS_0x12000ab00, C4<0>, C4<0>;
+L_0x13c1312e0 .functor PMOS 1, L_0x13c129130, RS_0x12000ab30, C4<0>, C4<0>;
+L_0x13c129080 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c1314d0 .functor NMOS 1, L_0x13c129080, RS_0x12000ab00, C4<0>, C4<0>;
+L_0x13c131580 .functor NMOS 1, L_0x13c1314d0, RS_0x12000ab30, C4<0>, C4<0>;
+v0x13c219720_0 .net8 "gnd", 0 0, L_0x13c129080;  1 drivers, strength-aware
+v0x13c2197d0_0 .net8 "in1", 0 0, RS_0x12000ab00;  alias, 2 drivers, strength-aware
+v0x13c219870_0 .net8 "in2", 0 0, RS_0x12000ab30;  alias, 2 drivers, strength-aware
+v0x13c219900_0 .net8 "nmos1_out", 0 0, L_0x13c1314d0;  1 drivers, strength-aware
+v0x13c219990_0 .net8 "out", 0 0, RS_0x12000ab90;  alias, 3 drivers, strength-aware
+v0x13c219a20_0 .net8 "pwr", 0 0, L_0x13c129130;  1 drivers, strength-aware
+S_0x13c219af0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c2192a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c129280 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c131630 .functor PMOS 1, L_0x13c129280, RS_0x12000ab90, C4<0>, C4<0>;
+L_0x13c1291d0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c1316e0 .functor NMOS 1, L_0x13c1291d0, RS_0x12000ab90, C4<0>, C4<0>;
+v0x13c219cf0_0 .net8 "gnd", 0 0, L_0x13c1291d0;  1 drivers, strength-aware
+v0x13c219d80_0 .net8 "in", 0 0, RS_0x12000ab90;  alias, 3 drivers, strength-aware
+v0x13c219e40_0 .net8 "out", 0 0, RS_0x12000acb0;  alias, 2 drivers, strength-aware
+v0x13c219ef0_0 .net8 "vdd", 0 0, L_0x13c129280;  1 drivers, strength-aware
+S_0x13c21a2a0 .scope module, "and_p" "and_gate" 4 206, 4 61 0, S_0x13c219060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c21afe0_0 .net8 "in1", 0 0, RS_0x12000ae30;  alias, 2 drivers, strength-aware
+v0x13c21b090_0 .net8 "in2", 0 0, RS_0x12000ae60;  alias, 2 drivers, strength-aware
+RS_0x12000aec0 .resolv tri, L_0x13c131790, L_0x13c131940, L_0x13c131be0;
+v0x13c21b140_0 .net8 "nand_out", 0 0, RS_0x12000aec0;  3 drivers, strength-aware
+v0x13c21b230_0 .net8 "out", 0 0, RS_0x12000afe0;  alias, 2 drivers, strength-aware
+S_0x13c21a4b0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c21a2a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c1293d0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c131790 .functor PMOS 1, L_0x13c1293d0, RS_0x12000ae30, C4<0>, C4<0>;
+L_0x13c131940 .functor PMOS 1, L_0x13c1293d0, RS_0x12000ae60, C4<0>, C4<0>;
+L_0x13c129320 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c131b30 .functor NMOS 1, L_0x13c129320, RS_0x12000ae30, C4<0>, C4<0>;
+L_0x13c131be0 .functor NMOS 1, L_0x13c131b30, RS_0x12000ae60, C4<0>, C4<0>;
+v0x13c21a6e0_0 .net8 "gnd", 0 0, L_0x13c129320;  1 drivers, strength-aware
+v0x13c21a790_0 .net8 "in1", 0 0, RS_0x12000ae30;  alias, 2 drivers, strength-aware
+v0x13c21a830_0 .net8 "in2", 0 0, RS_0x12000ae60;  alias, 2 drivers, strength-aware
+v0x13c21a8e0_0 .net8 "nmos1_out", 0 0, L_0x13c131b30;  1 drivers, strength-aware
+v0x13c21a980_0 .net8 "out", 0 0, RS_0x12000aec0;  alias, 3 drivers, strength-aware
+v0x13c21aa60_0 .net8 "pwr", 0 0, L_0x13c1293d0;  1 drivers, strength-aware
+S_0x13c21ab30 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c21a2a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c129520 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c131c90 .functor PMOS 1, L_0x13c129520, RS_0x12000aec0, C4<0>, C4<0>;
+L_0x13c129470 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c131d40 .functor NMOS 1, L_0x13c129470, RS_0x12000aec0, C4<0>, C4<0>;
+v0x13c21ad30_0 .net8 "gnd", 0 0, L_0x13c129470;  1 drivers, strength-aware
+v0x13c21adc0_0 .net8 "in", 0 0, RS_0x12000aec0;  alias, 3 drivers, strength-aware
+v0x13c21ae80_0 .net8 "out", 0 0, RS_0x12000afe0;  alias, 2 drivers, strength-aware
+v0x13c21af30_0 .net8 "vdd", 0 0, L_0x13c129520;  1 drivers, strength-aware
+S_0x13c21b2e0 .scope module, "decA" "decode_ternary" 4 197, 4 89 0, S_0x13c219060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in";
+    .port_info 1 /OUTPUT 1 "is_minus";
+    .port_info 2 /OUTPUT 1 "is_zero";
+    .port_info 3 /OUTPUT 1 "is_plus";
+v0x13ae0c5b0_0 .net "in", 1 0, v0x13c226ff0_0;  alias, 1 drivers
+v0x13ae0c640_0 .net8 "is_minus", 0 0, RS_0x12000ab00;  alias, 2 drivers, strength-aware
+v0x13ae0c750_0 .net8 "is_plus", 0 0, RS_0x12000ae30;  alias, 2 drivers, strength-aware
+v0x13ae0c860_0 .net8 "is_zero", 0 0, RS_0x12000b8b0;  alias, 2 drivers, strength-aware
+RS_0x12000b190 .resolv tri, L_0x13af8ff00, L_0x13af8fff0;
+v0x13ae0c930_0 .net8 "not_in0", 0 0, RS_0x12000b190;  2 drivers, strength-aware
+RS_0x12000b160 .resolv tri, L_0x13af8fc80, L_0x13af8fd50;
+v0x13ae0ca00_0 .net8 "not_in1", 0 0, RS_0x12000b160;  2 drivers, strength-aware
+L_0x13af8fe60 .part v0x13c226ff0_0, 1, 1;
+L_0x13c11ab00 .part v0x13c226ff0_0, 0, 1;
+L_0x13c12f470 .part v0x13c226ff0_0, 0, 1;
+L_0x13c12f9f0 .part v0x13c226ff0_0, 1, 1;
+S_0x13c21b520 .scope module, "a_minus" "and_gate" 4 105, 4 61 0, S_0x13c21b2e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c21c2b0_0 .net8 "in1", 0 0, RS_0x12000b160;  alias, 2 drivers, strength-aware
+v0x13c21c340_0 .net8 "in2", 0 0, RS_0x12000b190;  alias, 2 drivers, strength-aware
+RS_0x12000b1f0 .resolv tri, L_0x13c107730, L_0x13c11bfe0, L_0x13c1083b0;
+v0x13c21c3f0_0 .net8 "nand_out", 0 0, RS_0x12000b1f0;  3 drivers, strength-aware
+v0x13c21c4e0_0 .net8 "out", 0 0, RS_0x12000ab00;  alias, 2 drivers, strength-aware
+S_0x13c21b750 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c21b520;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c127ed0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c107730 .functor PMOS 1, L_0x13c127ed0, RS_0x12000b160, C4<0>, C4<0>;
+L_0x13c11bfe0 .functor PMOS 1, L_0x13c127ed0, RS_0x12000b190, C4<0>, C4<0>;
+L_0x13c127e20 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c11b440 .functor NMOS 1, L_0x13c127e20, RS_0x12000b160, C4<0>, C4<0>;
+L_0x13c1083b0 .functor NMOS 1, L_0x13c11b440, RS_0x12000b190, C4<0>, C4<0>;
+v0x13c21b980_0 .net8 "gnd", 0 0, L_0x13c127e20;  1 drivers, strength-aware
+v0x13c21ba30_0 .net8 "in1", 0 0, RS_0x12000b160;  alias, 2 drivers, strength-aware
+v0x13c21bad0_0 .net8 "in2", 0 0, RS_0x12000b190;  alias, 2 drivers, strength-aware
+v0x13c21bb80_0 .net8 "nmos1_out", 0 0, L_0x13c11b440;  1 drivers, strength-aware
+v0x13c21bc20_0 .net8 "out", 0 0, RS_0x12000b1f0;  alias, 3 drivers, strength-aware
+v0x13c21bd00_0 .net8 "pwr", 0 0, L_0x13c127ed0;  1 drivers, strength-aware
+S_0x13c21bdd0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c21b520;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c128020 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12ee30 .functor PMOS 1, L_0x13c128020, RS_0x12000b1f0, C4<0>, C4<0>;
+L_0x13c127f70 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12eea0 .functor NMOS 1, L_0x13c127f70, RS_0x12000b1f0, C4<0>, C4<0>;
+v0x13c21bfd0_0 .net8 "gnd", 0 0, L_0x13c127f70;  1 drivers, strength-aware
+v0x13c21c060_0 .net8 "in", 0 0, RS_0x12000b1f0;  alias, 3 drivers, strength-aware
+v0x13c21c120_0 .net8 "out", 0 0, RS_0x12000ab00;  alias, 2 drivers, strength-aware
+v0x13c21c210_0 .net8 "vdd", 0 0, L_0x13c128020;  1 drivers, strength-aware
+S_0x13c21c570 .scope module, "a_plus" "and_gate" 4 111, 4 61 0, S_0x13c21b2e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c21d300_0 .net "in1", 0 0, L_0x13c12f9f0;  1 drivers
+v0x13c21d390_0 .net8 "in2", 0 0, RS_0x12000b190;  alias, 2 drivers, strength-aware
+RS_0x12000b4c0 .resolv tri, L_0x13c12f590, L_0x13c12f640, L_0x13c12f7e0;
+v0x13c21d420_0 .net8 "nand_out", 0 0, RS_0x12000b4c0;  3 drivers, strength-aware
+v0x13c21d510_0 .net8 "out", 0 0, RS_0x12000ae30;  alias, 2 drivers, strength-aware
+S_0x13c21c790 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c21c570;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c128410 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12f590 .functor PMOS 1, L_0x13c128410, L_0x13c12f9f0, C4<0>, C4<0>;
+L_0x13c12f640 .functor PMOS 1, L_0x13c128410, RS_0x12000b190, C4<0>, C4<0>;
+L_0x13c128360 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12f730 .functor NMOS 1, L_0x13c128360, L_0x13c12f9f0, C4<0>, C4<0>;
+L_0x13c12f7e0 .functor NMOS 1, L_0x13c12f730, RS_0x12000b190, C4<0>, C4<0>;
+v0x13c21c9c0_0 .net8 "gnd", 0 0, L_0x13c128360;  1 drivers, strength-aware
+v0x13c21ca70_0 .net "in1", 0 0, L_0x13c12f9f0;  alias, 1 drivers
+v0x13c21cb10_0 .net8 "in2", 0 0, RS_0x12000b190;  alias, 2 drivers, strength-aware
+v0x13c21cc00_0 .net8 "nmos1_out", 0 0, L_0x13c12f730;  1 drivers, strength-aware
+v0x13c21cc90_0 .net8 "out", 0 0, RS_0x12000b4c0;  alias, 3 drivers, strength-aware
+v0x13c21cd60_0 .net8 "pwr", 0 0, L_0x13c128410;  1 drivers, strength-aware
+S_0x13c21ce20 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c21c570;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c128560 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12f890 .functor PMOS 1, L_0x13c128560, RS_0x12000b4c0, C4<0>, C4<0>;
+L_0x13c1284b0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12f940 .functor NMOS 1, L_0x13c1284b0, RS_0x12000b4c0, C4<0>, C4<0>;
+v0x13c21d020_0 .net8 "gnd", 0 0, L_0x13c1284b0;  1 drivers, strength-aware
+v0x13c21d0b0_0 .net8 "in", 0 0, RS_0x12000b4c0;  alias, 3 drivers, strength-aware
+v0x13c21d170_0 .net8 "out", 0 0, RS_0x12000ae30;  alias, 2 drivers, strength-aware
+v0x13c21d260_0 .net8 "vdd", 0 0, L_0x13c128560;  1 drivers, strength-aware
+S_0x13ae04c90 .scope module, "a_zero" "and_gate" 4 108, 4 61 0, S_0x13c21b2e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13ae0b9f0_0 .net8 "in1", 0 0, RS_0x12000b160;  alias, 2 drivers, strength-aware
+v0x13ae0ba80_0 .net "in2", 0 0, L_0x13c12f470;  1 drivers
+RS_0x12000b790 .resolv tri, L_0x13c12ef50, L_0x13c12f000, L_0x13c12f1e0;
+v0x13ae0bb10_0 .net8 "nand_out", 0 0, RS_0x12000b790;  3 drivers, strength-aware
+v0x13ae0bbe0_0 .net8 "out", 0 0, RS_0x12000b8b0;  alias, 2 drivers, strength-aware
+S_0x13ae0b3d0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13ae04c90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c128170 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12ef50 .functor PMOS 1, L_0x13c128170, RS_0x12000b160, C4<0>, C4<0>;
+L_0x13c12f000 .functor PMOS 1, L_0x13c128170, L_0x13c12f470, C4<0>, C4<0>;
+L_0x13c1280c0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12f130 .functor NMOS 1, L_0x13c1280c0, RS_0x12000b160, C4<0>, C4<0>;
+L_0x13c12f1e0 .functor NMOS 1, L_0x13c12f130, L_0x13c12f470, C4<0>, C4<0>;
+v0x13ae09810_0 .net8 "gnd", 0 0, L_0x13c1280c0;  1 drivers, strength-aware
+v0x13ae06740_0 .net8 "in1", 0 0, RS_0x12000b160;  alias, 2 drivers, strength-aware
+v0x13ae06810_0 .net "in2", 0 0, L_0x13c12f470;  alias, 1 drivers
+v0x13ae09170_0 .net8 "nmos1_out", 0 0, L_0x13c12f130;  1 drivers, strength-aware
+v0x13ae09200_0 .net8 "out", 0 0, RS_0x12000b790;  alias, 3 drivers, strength-aware
+v0x13ae0b540_0 .net8 "pwr", 0 0, L_0x13c128170;  1 drivers, strength-aware
+S_0x13ae0b6d0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13ae04c90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1282c0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12f290 .functor PMOS 1, L_0x13c1282c0, RS_0x12000b790, C4<0>, C4<0>;
+L_0x13c128210 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12f3c0 .functor NMOS 1, L_0x13c128210, RS_0x12000b790, C4<0>, C4<0>;
+v0x13ae0b620_0 .net8 "gnd", 0 0, L_0x13c128210;  1 drivers, strength-aware
+v0x13ae0b840_0 .net8 "in", 0 0, RS_0x12000b790;  alias, 3 drivers, strength-aware
+v0x13ae0b8d0_0 .net8 "out", 0 0, RS_0x12000b8b0;  alias, 2 drivers, strength-aware
+v0x13ae0b960_0 .net8 "vdd", 0 0, L_0x13c1282c0;  1 drivers, strength-aware
+S_0x13ae0bc70 .scope module, "inv0" "not_gate" 4 102, 4 2 0, S_0x13c21b2e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c127d80 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8ff00 .functor PMOS 1, L_0x13c127d80, L_0x13c11ab00, C4<0>, C4<0>;
+L_0x13c127cd0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8fff0 .functor NMOS 1, L_0x13c127cd0, L_0x13c11ab00, C4<0>, C4<0>;
+v0x13ae0be30_0 .net8 "gnd", 0 0, L_0x13c127cd0;  1 drivers, strength-aware
+v0x13ae0bec0_0 .net "in", 0 0, L_0x13c11ab00;  1 drivers
+v0x13ae0bf50_0 .net8 "out", 0 0, RS_0x12000b190;  alias, 2 drivers, strength-aware
+v0x13ae0c060_0 .net8 "vdd", 0 0, L_0x13c127d80;  1 drivers, strength-aware
+S_0x13ae0c0f0 .scope module, "inv1" "not_gate" 4 101, 4 2 0, S_0x13c21b2e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c127c30 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af8fc80 .functor PMOS 1, L_0x13c127c30, L_0x13af8fe60, C4<0>, C4<0>;
+L_0x13c127b80 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af8fd50 .functor NMOS 1, L_0x13c127b80, L_0x13af8fe60, C4<0>, C4<0>;
+v0x13ae0c2f0_0 .net8 "gnd", 0 0, L_0x13c127b80;  1 drivers, strength-aware
+v0x13ae0c380_0 .net "in", 0 0, L_0x13af8fe60;  1 drivers
+v0x13ae0c410_0 .net8 "out", 0 0, RS_0x12000b160;  alias, 2 drivers, strength-aware
+v0x13ae0c520_0 .net8 "vdd", 0 0, L_0x13c127c30;  1 drivers, strength-aware
+S_0x13ae0ca90 .scope module, "decB" "decode_ternary" 4 200, 4 89 0, S_0x13c219060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in";
+    .port_info 1 /OUTPUT 1 "is_minus";
+    .port_info 2 /OUTPUT 1 "is_zero";
+    .port_info 3 /OUTPUT 1 "is_plus";
+v0x13ae0f880_0 .net "in", 1 0, v0x13c120c40_0;  alias, 1 drivers
+v0x13ae0f950_0 .net8 "is_minus", 0 0, RS_0x12000ab30;  alias, 2 drivers, strength-aware
+v0x13ae0fa60_0 .net8 "is_plus", 0 0, RS_0x12000ae60;  alias, 2 drivers, strength-aware
+v0x13ae0fb70_0 .net8 "is_zero", 0 0, RS_0x12000c420;  alias, 2 drivers, strength-aware
+RS_0x12000bd00 .resolv tri, L_0x13c12fd10, L_0x13c12fdc0;
+v0x13ae0fc00_0 .net8 "not_in0", 0 0, RS_0x12000bd00;  2 drivers, strength-aware
+RS_0x12000bcd0 .resolv tri, L_0x13c12fb10, L_0x13c12fb80;
+v0x13ae0fcd0_0 .net8 "not_in1", 0 0, RS_0x12000bcd0;  2 drivers, strength-aware
+L_0x13c12fc70 .part v0x13c120c40_0, 1, 1;
+L_0x13c12feb0 .part v0x13c120c40_0, 0, 1;
+L_0x13c130ad0 .part v0x13c120c40_0, 0, 1;
+L_0x13c131050 .part v0x13c120c40_0, 1, 1;
+S_0x13ae0ccb0 .scope module, "a_minus" "and_gate" 4 105, 4 61 0, S_0x13ae0ca90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c21dbb0_0 .net8 "in1", 0 0, RS_0x12000bcd0;  alias, 2 drivers, strength-aware
+v0x13c21dc40_0 .net8 "in2", 0 0, RS_0x12000bd00;  alias, 2 drivers, strength-aware
+RS_0x12000bd60 .resolv tri, L_0x13c12ff50, L_0x13c130100, L_0x13c1303a0;
+v0x13c21dd00_0 .net8 "nand_out", 0 0, RS_0x12000bd60;  3 drivers, strength-aware
+v0x13c21ddf0_0 .net8 "out", 0 0, RS_0x12000ab30;  alias, 2 drivers, strength-aware
+S_0x13ae0cee0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13ae0ccb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c128950 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12ff50 .functor PMOS 1, L_0x13c128950, RS_0x12000bcd0, C4<0>, C4<0>;
+L_0x13c130100 .functor PMOS 1, L_0x13c128950, RS_0x12000bd00, C4<0>, C4<0>;
+L_0x13c1288a0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c1302f0 .functor NMOS 1, L_0x13c1288a0, RS_0x12000bcd0, C4<0>, C4<0>;
+L_0x13c1303a0 .functor NMOS 1, L_0x13c1302f0, RS_0x12000bd00, C4<0>, C4<0>;
+v0x13ae0d120_0 .net8 "gnd", 0 0, L_0x13c1288a0;  1 drivers, strength-aware
+v0x13ae0d1d0_0 .net8 "in1", 0 0, RS_0x12000bcd0;  alias, 2 drivers, strength-aware
+v0x13ae0d270_0 .net8 "in2", 0 0, RS_0x12000bd00;  alias, 2 drivers, strength-aware
+v0x13c21d5a0_0 .net8 "nmos1_out", 0 0, L_0x13c1302f0;  1 drivers, strength-aware
+v0x13c21d630_0 .net8 "out", 0 0, RS_0x12000bd60;  alias, 3 drivers, strength-aware
+v0x13c21d6c0_0 .net8 "pwr", 0 0, L_0x13c128950;  1 drivers, strength-aware
+S_0x13c21d750 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13ae0ccb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c128aa0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c130450 .functor PMOS 1, L_0x13c128aa0, RS_0x12000bd60, C4<0>, C4<0>;
+L_0x13c1289f0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c130500 .functor NMOS 1, L_0x13c1289f0, RS_0x12000bd60, C4<0>, C4<0>;
+v0x13c21d910_0 .net8 "gnd", 0 0, L_0x13c1289f0;  1 drivers, strength-aware
+v0x13c21d9a0_0 .net8 "in", 0 0, RS_0x12000bd60;  alias, 3 drivers, strength-aware
+v0x13c21da30_0 .net8 "out", 0 0, RS_0x12000ab30;  alias, 2 drivers, strength-aware
+v0x13c21db20_0 .net8 "vdd", 0 0, L_0x13c128aa0;  1 drivers, strength-aware
+S_0x13c21de90 .scope module, "a_plus" "and_gate" 4 111, 4 61 0, S_0x13ae0ca90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13ae0dae0_0 .net "in1", 0 0, L_0x13c131050;  1 drivers
+v0x13ae0db90_0 .net8 "in2", 0 0, RS_0x12000bd00;  alias, 2 drivers, strength-aware
+RS_0x12000c030 .resolv tri, L_0x13c130bf0, L_0x13c130ca0, L_0x13c130e40;
+v0x13ae0dc20_0 .net8 "nand_out", 0 0, RS_0x12000c030;  3 drivers, strength-aware
+v0x13ae0dd10_0 .net8 "out", 0 0, RS_0x12000ae60;  alias, 2 drivers, strength-aware
+S_0x13c21e0d0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c21de90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c128e90 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c130bf0 .functor PMOS 1, L_0x13c128e90, L_0x13c131050, C4<0>, C4<0>;
+L_0x13c130ca0 .functor PMOS 1, L_0x13c128e90, RS_0x12000bd00, C4<0>, C4<0>;
+L_0x13c128de0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c130d90 .functor NMOS 1, L_0x13c128de0, L_0x13c131050, C4<0>, C4<0>;
+L_0x13c130e40 .functor NMOS 1, L_0x13c130d90, RS_0x12000bd00, C4<0>, C4<0>;
+v0x13c21e310_0 .net8 "gnd", 0 0, L_0x13c128de0;  1 drivers, strength-aware
+v0x13c21e3c0_0 .net "in1", 0 0, L_0x13c131050;  alias, 1 drivers
+v0x13ae0d320_0 .net8 "in2", 0 0, RS_0x12000bd00;  alias, 2 drivers, strength-aware
+v0x13ae0d3f0_0 .net8 "nmos1_out", 0 0, L_0x13c130d90;  1 drivers, strength-aware
+v0x13ae0d480_0 .net8 "out", 0 0, RS_0x12000c030;  alias, 3 drivers, strength-aware
+v0x13ae0d550_0 .net8 "pwr", 0 0, L_0x13c128e90;  1 drivers, strength-aware
+S_0x13ae0d5e0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c21de90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c128fe0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c130ef0 .functor PMOS 1, L_0x13c128fe0, RS_0x12000c030, C4<0>, C4<0>;
+L_0x13c128f30 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c130fa0 .functor NMOS 1, L_0x13c128f30, RS_0x12000c030, C4<0>, C4<0>;
+v0x13ae0d7e0_0 .net8 "gnd", 0 0, L_0x13c128f30;  1 drivers, strength-aware
+v0x13ae0d890_0 .net8 "in", 0 0, RS_0x12000c030;  alias, 3 drivers, strength-aware
+v0x13ae0d950_0 .net8 "out", 0 0, RS_0x12000ae60;  alias, 2 drivers, strength-aware
+v0x13ae0da40_0 .net8 "vdd", 0 0, L_0x13c128fe0;  1 drivers, strength-aware
+S_0x13ae0ddb0 .scope module, "a_zero" "and_gate" 4 108, 4 61 0, S_0x13ae0ca90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13ae0eb70_0 .net8 "in1", 0 0, RS_0x12000bcd0;  alias, 2 drivers, strength-aware
+v0x13ae0ec00_0 .net "in2", 0 0, L_0x13c130ad0;  1 drivers
+RS_0x12000c300 .resolv tri, L_0x13c1305b0, L_0x13c130660, L_0x13c130840;
+v0x13ae0ecc0_0 .net8 "nand_out", 0 0, RS_0x12000c300;  3 drivers, strength-aware
+v0x13ae0edb0_0 .net8 "out", 0 0, RS_0x12000c420;  alias, 2 drivers, strength-aware
+S_0x13ae0e000 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13ae0ddb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c128bf0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c1305b0 .functor PMOS 1, L_0x13c128bf0, RS_0x12000bcd0, C4<0>, C4<0>;
+L_0x13c130660 .functor PMOS 1, L_0x13c128bf0, L_0x13c130ad0, C4<0>, C4<0>;
+L_0x13c128b40 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c130790 .functor NMOS 1, L_0x13c128b40, RS_0x12000bcd0, C4<0>, C4<0>;
+L_0x13c130840 .functor NMOS 1, L_0x13c130790, L_0x13c130ad0, C4<0>, C4<0>;
+v0x13ae0e240_0 .net8 "gnd", 0 0, L_0x13c128b40;  1 drivers, strength-aware
+v0x13ae0e2f0_0 .net8 "in1", 0 0, RS_0x12000bcd0;  alias, 2 drivers, strength-aware
+v0x13ae0e3d0_0 .net "in2", 0 0, L_0x13c130ad0;  alias, 1 drivers
+v0x13ae0e480_0 .net8 "nmos1_out", 0 0, L_0x13c130790;  1 drivers, strength-aware
+v0x13ae0e510_0 .net8 "out", 0 0, RS_0x12000c300;  alias, 3 drivers, strength-aware
+v0x13ae0e5f0_0 .net8 "pwr", 0 0, L_0x13c128bf0;  1 drivers, strength-aware
+S_0x13ae0e6c0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13ae0ddb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c128d40 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c1308f0 .functor PMOS 1, L_0x13c128d40, RS_0x12000c300, C4<0>, C4<0>;
+L_0x13c128c90 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c130a20 .functor NMOS 1, L_0x13c128c90, RS_0x12000c300, C4<0>, C4<0>;
+v0x13ae0e8c0_0 .net8 "gnd", 0 0, L_0x13c128c90;  1 drivers, strength-aware
+v0x13ae0e950_0 .net8 "in", 0 0, RS_0x12000c300;  alias, 3 drivers, strength-aware
+v0x13ae0ea10_0 .net8 "out", 0 0, RS_0x12000c420;  alias, 2 drivers, strength-aware
+v0x13ae0eac0_0 .net8 "vdd", 0 0, L_0x13c128d40;  1 drivers, strength-aware
+S_0x13ae0ee60 .scope module, "inv0" "not_gate" 4 102, 4 2 0, S_0x13ae0ca90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c128800 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12fd10 .functor PMOS 1, L_0x13c128800, L_0x13c12feb0, C4<0>, C4<0>;
+L_0x13c128750 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12fdc0 .functor NMOS 1, L_0x13c128750, L_0x13c12feb0, C4<0>, C4<0>;
+v0x13ae0f050_0 .net8 "gnd", 0 0, L_0x13c128750;  1 drivers, strength-aware
+v0x13ae0f100_0 .net "in", 0 0, L_0x13c12feb0;  1 drivers
+v0x13ae0f1a0_0 .net8 "out", 0 0, RS_0x12000bd00;  alias, 2 drivers, strength-aware
+v0x13ae0f2b0_0 .net8 "vdd", 0 0, L_0x13c128800;  1 drivers, strength-aware
+S_0x13ae0f370 .scope module, "inv1" "not_gate" 4 101, 4 2 0, S_0x13ae0ca90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1286b0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12fb10 .functor PMOS 1, L_0x13c1286b0, L_0x13c12fc70, C4<0>, C4<0>;
+L_0x13c128600 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12fb80 .functor NMOS 1, L_0x13c128600, L_0x13c12fc70, C4<0>, C4<0>;
+v0x13ae0f560_0 .net8 "gnd", 0 0, L_0x13c128600;  1 drivers, strength-aware
+v0x13ae0f610_0 .net "in", 0 0, L_0x13c12fc70;  1 drivers
+v0x13ae0f6b0_0 .net8 "out", 0 0, RS_0x12000bcd0;  alias, 2 drivers, strength-aware
+v0x13ae0f7c0_0 .net8 "vdd", 0 0, L_0x13c1286b0;  1 drivers, strength-aware
+S_0x13ae0fd60 .scope module, "enc" "encode_ternary" 4 214, 4 114 0, S_0x13c219060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "is_minus";
+    .port_info 1 /INPUT 1 "is_zero";
+    .port_info 2 /INPUT 1 "is_plus";
+    .port_info 3 /OUTPUT 2 "out";
+L_0x13c1326b0 .functor BUFZ 1, RS_0x12000afe0, C4<0>, C4<0>, C4<0>;
+L_0x13c132880 .functor BUFZ 1, RS_0x12000c870, C4<0>, C4<0>, C4<0>;
+v0x13ae0ffc0_0 .net *"_ivl_3", 0 0, L_0x13c1326b0;  1 drivers
+v0x13ae10080_0 .net *"_ivl_8", 0 0, L_0x13c132880;  1 drivers
+v0x13ae10130_0 .net8 "is_minus", 0 0, RS_0x12000acb0;  alias, 2 drivers, strength-aware
+v0x13ae10220_0 .net8 "is_plus", 0 0, RS_0x12000afe0;  alias, 2 drivers, strength-aware
+v0x13ae102f0_0 .net8 "is_zero", 0 0, RS_0x12000c870;  alias, 2 drivers, strength-aware
+v0x13ae103c0_0 .net "out", 1 0, L_0x13c132720;  alias, 1 drivers
+L_0x13c132720 .concat8 [ 1 1 0 0], L_0x13c132880, L_0x13c1326b0;
+S_0x13ae104b0 .scope module, "inv_z" "not_gate" 4 212, 4 2 0, S_0x13c219060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c129910 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c1324d0 .functor PMOS 1, L_0x13c129910, RS_0x12000c9c0, C4<0>, C4<0>;
+L_0x13c129860 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c132580 .functor NMOS 1, L_0x13c129860, RS_0x12000c9c0, C4<0>, C4<0>;
+v0x13ae106b0_0 .net8 "gnd", 0 0, L_0x13c129860;  1 drivers, strength-aware
+v0x13ae10760_0 .net8 "in", 0 0, RS_0x12000c9c0;  alias, 2 drivers, strength-aware
+v0x13ae10800_0 .net8 "out", 0 0, RS_0x12000c870;  alias, 2 drivers, strength-aware
+v0x13ae108b0_0 .net8 "vdd", 0 0, L_0x13c129910;  1 drivers, strength-aware
+S_0x13ae10960 .scope module, "or_mp" "or_gate" 4 209, 4 75 0, S_0x13c219060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13ae116a0_0 .net8 "in1", 0 0, RS_0x12000acb0;  alias, 2 drivers, strength-aware
+v0x13ae117b0_0 .net8 "in2", 0 0, RS_0x12000afe0;  alias, 2 drivers, strength-aware
+RS_0x12000cab0 .resolv tri, L_0x13c131fa0, L_0x13c132150, L_0x13c132280;
+v0x13ae118d0_0 .net8 "nor_out", 0 0, RS_0x12000cab0;  3 drivers, strength-aware
+v0x13ae11960_0 .net8 "out", 0 0, RS_0x12000c9c0;  alias, 2 drivers, strength-aware
+S_0x13ae10b90 .scope module, "nor_gate1" "nor_gate" 4 83, 4 43 0, S_0x13ae10960;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c129670 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c131df0 .functor PMOS 1, L_0x13c129670, RS_0x12000acb0, C4<0>, C4<0>;
+L_0x13c131fa0 .functor PMOS 1, L_0x13c131df0, RS_0x12000afe0, C4<0>, C4<0>;
+L_0x13c1295c0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c132150 .functor NMOS 1, L_0x13c1295c0, RS_0x12000acb0, C4<0>, C4<0>;
+L_0x13c132280 .functor NMOS 1, L_0x13c1295c0, RS_0x12000afe0, C4<0>, C4<0>;
+v0x13ae10dc0_0 .net8 "gnd", 0 0, L_0x13c1295c0;  1 drivers, strength-aware
+v0x13ae10e70_0 .net8 "in1", 0 0, RS_0x12000acb0;  alias, 2 drivers, strength-aware
+v0x13ae10f10_0 .net8 "in2", 0 0, RS_0x12000afe0;  alias, 2 drivers, strength-aware
+v0x13ae10fc0_0 .net8 "out", 0 0, RS_0x12000cab0;  alias, 3 drivers, strength-aware
+v0x13ae11050_0 .net8 "pmos1_out", 0 0, L_0x13c131df0;  1 drivers, strength-aware
+v0x13ae11120_0 .net8 "pwr", 0 0, L_0x13c129670;  1 drivers, strength-aware
+S_0x13ae111f0 .scope module, "not_gate1" "not_gate" 4 84, 4 2 0, S_0x13ae10960;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1297c0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c1322f0 .functor PMOS 1, L_0x13c1297c0, RS_0x12000cab0, C4<0>, C4<0>;
+L_0x13c129710 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c132420 .functor NMOS 1, L_0x13c129710, RS_0x12000cab0, C4<0>, C4<0>;
+v0x13ae113f0_0 .net8 "gnd", 0 0, L_0x13c129710;  1 drivers, strength-aware
+v0x13ae11480_0 .net8 "in", 0 0, RS_0x12000cab0;  alias, 3 drivers, strength-aware
+v0x13ae11540_0 .net8 "out", 0 0, RS_0x12000c9c0;  alias, 2 drivers, strength-aware
+v0x13ae11610_0 .net8 "vdd", 0 0, L_0x13c1297c0;  1 drivers, strength-aware
+S_0x13ae12260 .scope module, "max_to_test" "ternary_max" 3 25, 4 159 0, S_0x13c206c40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "a";
+    .port_info 1 /INPUT 2 "b";
+    .port_info 2 /OUTPUT 2 "out";
+v0x13c11b6f0_0 .net "a", 1 0, v0x13c226ff0_0;  alias, 1 drivers
+RS_0x12000d2c0 .resolv tri, L_0x13af85350, L_0x13af85440;
+v0x13c11b780_0 .net8 "a_minus", 0 0, RS_0x12000d2c0;  2 drivers, strength-aware
+RS_0x12000d5c0 .resolv tri, L_0x13af85d70, L_0x13af85e40;
+v0x13c11b810_0 .net8 "a_plus", 0 0, RS_0x12000d5c0;  2 drivers, strength-aware
+RS_0x12000d8c0 .resolv tri, L_0x13af85760, L_0x13af85810;
+v0x13c11b8a0_0 .net8 "a_zero", 0 0, RS_0x12000d8c0;  2 drivers, strength-aware
+v0x13c11b930_0 .net "b", 1 0, v0x13c120c40_0;  alias, 1 drivers
+RS_0x12000de90 .resolv tri, L_0x13af86b90, L_0x13af86ca0;
+v0x13c11b9c0_0 .net8 "b_minus", 0 0, RS_0x12000de90;  2 drivers, strength-aware
+RS_0x12000e190 .resolv tri, L_0x13af87750, L_0x13af87820;
+v0x13c11ba50_0 .net8 "b_plus", 0 0, RS_0x12000e190;  2 drivers, strength-aware
+RS_0x12000e490 .resolv tri, L_0x13af87120, L_0x13af871d0;
+v0x13c11bae0_0 .net8 "b_zero", 0 0, RS_0x12000e490;  2 drivers, strength-aware
+RS_0x12000cde0 .resolv tri, L_0x13af88420, L_0x13af88550;
+v0x13c11bb70_0 .net8 "not_out_plus", 0 0, RS_0x12000cde0;  2 drivers, strength-aware
+v0x13c11bc80_0 .net "out", 1 0, L_0x13af89dc0;  alias, 1 drivers
+RS_0x12000e8e0 .resolv tri, L_0x13af89af0, L_0x13af89be0;
+v0x13c11bd10_0 .net8 "out_minus", 0 0, RS_0x12000e8e0;  2 drivers, strength-aware
+RS_0x12000e910 .resolv tri, L_0x13af88180, L_0x13af88250;
+v0x13c11bda0_0 .net8 "out_plus", 0 0, RS_0x12000e910;  2 drivers, strength-aware
+RS_0x12000cf90 .resolv tri, L_0x13af89260, L_0x13af89330;
+v0x13c11be30_0 .net8 "out_zero", 0 0, RS_0x12000cf90;  2 drivers, strength-aware
+RS_0x12000eb20 .resolv tri, L_0x13af898b0, L_0x13af89a20;
+v0x13c11bec0_0 .net8 "plus_or_zero", 0 0, RS_0x12000eb20;  2 drivers, strength-aware
+RS_0x12000ce10 .resolv tri, L_0x13af88bd0, L_0x13af88cc0;
+v0x13c11bf50_0 .net8 "zero_or", 0 0, RS_0x12000ce10;  2 drivers, strength-aware
+S_0x13ae124b0 .scope module, "and_z" "and_gate" 4 180, 4 61 0, S_0x13ae12260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13ae13230_0 .net8 "in1", 0 0, RS_0x12000cde0;  alias, 2 drivers, strength-aware
+v0x13ae132e0_0 .net8 "in2", 0 0, RS_0x12000ce10;  alias, 2 drivers, strength-aware
+RS_0x12000ce70 .resolv tri, L_0x13af88d90, L_0x13af88e80, L_0x13af890b0;
+v0x13ae13390_0 .net8 "nand_out", 0 0, RS_0x12000ce70;  3 drivers, strength-aware
+v0x13ae13480_0 .net8 "out", 0 0, RS_0x12000cf90;  alias, 2 drivers, strength-aware
+S_0x13ae126f0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13ae124b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c124fd0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af88d90 .functor PMOS 1, L_0x13c124fd0, RS_0x12000cde0, C4<0>, C4<0>;
+L_0x13af88e80 .functor PMOS 1, L_0x13c124fd0, RS_0x12000ce10, C4<0>, C4<0>;
+L_0x13c124f30 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af88f90 .functor NMOS 1, L_0x13c124f30, RS_0x12000cde0, C4<0>, C4<0>;
+L_0x13af890b0 .functor NMOS 1, L_0x13af88f90, RS_0x12000ce10, C4<0>, C4<0>;
+v0x13ae12930_0 .net8 "gnd", 0 0, L_0x13c124f30;  1 drivers, strength-aware
+v0x13ae129e0_0 .net8 "in1", 0 0, RS_0x12000cde0;  alias, 2 drivers, strength-aware
+v0x13ae12a80_0 .net8 "in2", 0 0, RS_0x12000ce10;  alias, 2 drivers, strength-aware
+v0x13ae12b30_0 .net8 "nmos1_out", 0 0, L_0x13af88f90;  1 drivers, strength-aware
+v0x13ae12bd0_0 .net8 "out", 0 0, RS_0x12000ce70;  alias, 3 drivers, strength-aware
+v0x13ae12cb0_0 .net8 "pwr", 0 0, L_0x13c124fd0;  1 drivers, strength-aware
+S_0x13ae12d80 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13ae124b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c125120 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af89260 .functor PMOS 1, L_0x13c125120, RS_0x12000ce70, C4<0>, C4<0>;
+L_0x13c125070 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af89330 .functor NMOS 1, L_0x13c125070, RS_0x12000ce70, C4<0>, C4<0>;
+v0x13ae12f80_0 .net8 "gnd", 0 0, L_0x13c125070;  1 drivers, strength-aware
+v0x13ae13010_0 .net8 "in", 0 0, RS_0x12000ce70;  alias, 3 drivers, strength-aware
+v0x13ae130d0_0 .net8 "out", 0 0, RS_0x12000cf90;  alias, 2 drivers, strength-aware
+v0x13ae13180_0 .net8 "vdd", 0 0, L_0x13c125120;  1 drivers, strength-aware
+S_0x13ae13530 .scope module, "decA" "decode_ternary" 4 165, 4 89 0, S_0x13ae12260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in";
+    .port_info 1 /OUTPUT 1 "is_minus";
+    .port_info 2 /OUTPUT 1 "is_zero";
+    .port_info 3 /OUTPUT 1 "is_plus";
+v0x13af7eb50_0 .net "in", 1 0, v0x13c226ff0_0;  alias, 1 drivers
+v0x13af7ec60_0 .net8 "is_minus", 0 0, RS_0x12000d2c0;  alias, 2 drivers, strength-aware
+v0x13af7ed30_0 .net8 "is_plus", 0 0, RS_0x12000d5c0;  alias, 2 drivers, strength-aware
+v0x13af7ee00_0 .net8 "is_zero", 0 0, RS_0x12000d8c0;  alias, 2 drivers, strength-aware
+RS_0x12000d140 .resolv tri, L_0x13c12ec70, L_0x13c12ed20;
+v0x13af7eed0_0 .net8 "not_in0", 0 0, RS_0x12000d140;  2 drivers, strength-aware
+RS_0x12000d110 .resolv tri, L_0x13c12ea10, L_0x13c12eac0;
+v0x13af7efa0_0 .net8 "not_in1", 0 0, RS_0x12000d110;  2 drivers, strength-aware
+L_0x13c12ebd0 .part v0x13c226ff0_0, 1, 1;
+L_0x13af85040 .part v0x13c226ff0_0, 0, 1;
+L_0x13af858c0 .part v0x13c226ff0_0, 0, 1;
+L_0x13af85f10 .part v0x13c226ff0_0, 1, 1;
+S_0x13ae13750 .scope module, "a_minus" "and_gate" 4 105, 4 61 0, S_0x13ae13530;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13ae144c0_0 .net8 "in1", 0 0, RS_0x12000d110;  alias, 2 drivers, strength-aware
+v0x13ae14570_0 .net8 "in2", 0 0, RS_0x12000d140;  alias, 2 drivers, strength-aware
+RS_0x12000d1a0 .resolv tri, L_0x13af82e30, L_0x13af7ebe0, L_0x13af7e500;
+v0x13ae14620_0 .net8 "nand_out", 0 0, RS_0x12000d1a0;  3 drivers, strength-aware
+v0x13ae14710_0 .net8 "out", 0 0, RS_0x12000d2c0;  alias, 2 drivers, strength-aware
+S_0x13ae13980 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13ae13750;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c123730 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af82e30 .functor PMOS 1, L_0x13c123730, RS_0x12000d110, C4<0>, C4<0>;
+L_0x13af7ebe0 .functor PMOS 1, L_0x13c123730, RS_0x12000d140, C4<0>, C4<0>;
+L_0x13c123680 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af852e0 .functor NMOS 1, L_0x13c123680, RS_0x12000d110, C4<0>, C4<0>;
+L_0x13af7e500 .functor NMOS 1, L_0x13af852e0, RS_0x12000d140, C4<0>, C4<0>;
+v0x13ae13bc0_0 .net8 "gnd", 0 0, L_0x13c123680;  1 drivers, strength-aware
+v0x13ae13c70_0 .net8 "in1", 0 0, RS_0x12000d110;  alias, 2 drivers, strength-aware
+v0x13ae13d10_0 .net8 "in2", 0 0, RS_0x12000d140;  alias, 2 drivers, strength-aware
+v0x13ae13dc0_0 .net8 "nmos1_out", 0 0, L_0x13af852e0;  1 drivers, strength-aware
+v0x13ae13e60_0 .net8 "out", 0 0, RS_0x12000d1a0;  alias, 3 drivers, strength-aware
+v0x13ae13f40_0 .net8 "pwr", 0 0, L_0x13c123730;  1 drivers, strength-aware
+S_0x13ae14010 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13ae13750;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c123880 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af85350 .functor PMOS 1, L_0x13c123880, RS_0x12000d1a0, C4<0>, C4<0>;
+L_0x13c1237d0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af85440 .functor NMOS 1, L_0x13c1237d0, RS_0x12000d1a0, C4<0>, C4<0>;
+v0x13ae14210_0 .net8 "gnd", 0 0, L_0x13c1237d0;  1 drivers, strength-aware
+v0x13ae142a0_0 .net8 "in", 0 0, RS_0x12000d1a0;  alias, 3 drivers, strength-aware
+v0x13ae14360_0 .net8 "out", 0 0, RS_0x12000d2c0;  alias, 2 drivers, strength-aware
+v0x13ae14410_0 .net8 "vdd", 0 0, L_0x13c123880;  1 drivers, strength-aware
+S_0x13ae147c0 .scope module, "a_plus" "and_gate" 4 111, 4 61 0, S_0x13ae13530;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13af7ce50_0 .net "in1", 0 0, L_0x13af85f10;  1 drivers
+v0x13af7cee0_0 .net8 "in2", 0 0, RS_0x12000d140;  alias, 2 drivers, strength-aware
+RS_0x12000d4a0 .resolv tri, L_0x13af85a00, L_0x13af85ad0, L_0x13af85cc0;
+v0x13af7cf70_0 .net8 "nand_out", 0 0, RS_0x12000d4a0;  3 drivers, strength-aware
+v0x13af7d000_0 .net8 "out", 0 0, RS_0x12000d5c0;  alias, 2 drivers, strength-aware
+S_0x13ae149d0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13ae147c0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c123c70 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af85a00 .functor PMOS 1, L_0x13c123c70, L_0x13af85f10, C4<0>, C4<0>;
+L_0x13af85ad0 .functor PMOS 1, L_0x13c123c70, RS_0x12000d140, C4<0>, C4<0>;
+L_0x13c123bc0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af85be0 .functor NMOS 1, L_0x13c123bc0, L_0x13af85f10, C4<0>, C4<0>;
+L_0x13af85cc0 .functor NMOS 1, L_0x13af85be0, RS_0x12000d140, C4<0>, C4<0>;
+v0x13af7c6f0_0 .net8 "gnd", 0 0, L_0x13c123bc0;  1 drivers, strength-aware
+v0x13af7c780_0 .net "in1", 0 0, L_0x13af85f10;  alias, 1 drivers
+v0x13af7c810_0 .net8 "in2", 0 0, RS_0x12000d140;  alias, 2 drivers, strength-aware
+v0x13af7c8a0_0 .net8 "nmos1_out", 0 0, L_0x13af85be0;  1 drivers, strength-aware
+v0x13af7c930_0 .net8 "out", 0 0, RS_0x12000d4a0;  alias, 3 drivers, strength-aware
+v0x13af7c9c0_0 .net8 "pwr", 0 0, L_0x13c123c70;  1 drivers, strength-aware
+S_0x13af7ca50 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13ae147c0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c123dc0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af85d70 .functor PMOS 1, L_0x13c123dc0, RS_0x12000d4a0, C4<0>, C4<0>;
+L_0x13c123d10 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af85e40 .functor NMOS 1, L_0x13c123d10, RS_0x12000d4a0, C4<0>, C4<0>;
+v0x13af7cc10_0 .net8 "gnd", 0 0, L_0x13c123d10;  1 drivers, strength-aware
+v0x13af7cca0_0 .net8 "in", 0 0, RS_0x12000d4a0;  alias, 3 drivers, strength-aware
+v0x13af7cd30_0 .net8 "out", 0 0, RS_0x12000d5c0;  alias, 2 drivers, strength-aware
+v0x13af7cdc0_0 .net8 "vdd", 0 0, L_0x13c123dc0;  1 drivers, strength-aware
+S_0x13af7d090 .scope module, "a_zero" "and_gate" 4 108, 4 61 0, S_0x13ae13530;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13af7de40_0 .net8 "in1", 0 0, RS_0x12000d110;  alias, 2 drivers, strength-aware
+v0x13af7ded0_0 .net "in2", 0 0, L_0x13af858c0;  1 drivers
+RS_0x12000d7a0 .resolv tri, L_0x13af854b0, L_0x13af85520, L_0x13af856b0;
+v0x13af7df90_0 .net8 "nand_out", 0 0, RS_0x12000d7a0;  3 drivers, strength-aware
+v0x13af7e080_0 .net8 "out", 0 0, RS_0x12000d8c0;  alias, 2 drivers, strength-aware
+S_0x13af7d2e0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13af7d090;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c1239d0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af854b0 .functor PMOS 1, L_0x13c1239d0, RS_0x12000d110, C4<0>, C4<0>;
+L_0x13af85520 .functor PMOS 1, L_0x13c1239d0, L_0x13af858c0, C4<0>, C4<0>;
+L_0x13c123920 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af85610 .functor NMOS 1, L_0x13c123920, RS_0x12000d110, C4<0>, C4<0>;
+L_0x13af856b0 .functor NMOS 1, L_0x13af85610, L_0x13af858c0, C4<0>, C4<0>;
+v0x13af7d510_0 .net8 "gnd", 0 0, L_0x13c123920;  1 drivers, strength-aware
+v0x13af7d5c0_0 .net8 "in1", 0 0, RS_0x12000d110;  alias, 2 drivers, strength-aware
+v0x13af7d6a0_0 .net "in2", 0 0, L_0x13af858c0;  alias, 1 drivers
+v0x13af7d750_0 .net8 "nmos1_out", 0 0, L_0x13af85610;  1 drivers, strength-aware
+v0x13af7d7e0_0 .net8 "out", 0 0, RS_0x12000d7a0;  alias, 3 drivers, strength-aware
+v0x13af7d8c0_0 .net8 "pwr", 0 0, L_0x13c1239d0;  1 drivers, strength-aware
+S_0x13af7d990 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13af7d090;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c123b20 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af85760 .functor PMOS 1, L_0x13c123b20, RS_0x12000d7a0, C4<0>, C4<0>;
+L_0x13c123a70 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af85810 .functor NMOS 1, L_0x13c123a70, RS_0x12000d7a0, C4<0>, C4<0>;
+v0x13af7db90_0 .net8 "gnd", 0 0, L_0x13c123a70;  1 drivers, strength-aware
+v0x13af7dc20_0 .net8 "in", 0 0, RS_0x12000d7a0;  alias, 3 drivers, strength-aware
+v0x13af7dce0_0 .net8 "out", 0 0, RS_0x12000d8c0;  alias, 2 drivers, strength-aware
+v0x13af7dd90_0 .net8 "vdd", 0 0, L_0x13c123b20;  1 drivers, strength-aware
+S_0x13af7e130 .scope module, "inv0" "not_gate" 4 102, 4 2 0, S_0x13ae13530;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1235e0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12ec70 .functor PMOS 1, L_0x13c1235e0, L_0x13af85040, C4<0>, C4<0>;
+L_0x13c123530 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12ed20 .functor NMOS 1, L_0x13c123530, L_0x13af85040, C4<0>, C4<0>;
+v0x13af7e320_0 .net8 "gnd", 0 0, L_0x13c123530;  1 drivers, strength-aware
+v0x13af7e3d0_0 .net "in", 0 0, L_0x13af85040;  1 drivers
+v0x13af7e470_0 .net8 "out", 0 0, RS_0x12000d140;  alias, 2 drivers, strength-aware
+v0x13af7e580_0 .net8 "vdd", 0 0, L_0x13c1235e0;  1 drivers, strength-aware
+S_0x13af7e640 .scope module, "inv1" "not_gate" 4 101, 4 2 0, S_0x13ae13530;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c123490 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12ea10 .functor PMOS 1, L_0x13c123490, L_0x13c12ebd0, C4<0>, C4<0>;
+L_0x13c1233e0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12eac0 .functor NMOS 1, L_0x13c1233e0, L_0x13c12ebd0, C4<0>, C4<0>;
+v0x13af7e830_0 .net8 "gnd", 0 0, L_0x13c1233e0;  1 drivers, strength-aware
+v0x13af7e8e0_0 .net "in", 0 0, L_0x13c12ebd0;  1 drivers
+v0x13af7e980_0 .net8 "out", 0 0, RS_0x12000d110;  alias, 2 drivers, strength-aware
+v0x13af7ea90_0 .net8 "vdd", 0 0, L_0x13c123490;  1 drivers, strength-aware
+S_0x13af7f030 .scope module, "decB" "decode_ternary" 4 168, 4 89 0, S_0x13ae12260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in";
+    .port_info 1 /OUTPUT 1 "is_minus";
+    .port_info 2 /OUTPUT 1 "is_zero";
+    .port_info 3 /OUTPUT 1 "is_plus";
+v0x13af82da0_0 .net "in", 1 0, v0x13c120c40_0;  alias, 1 drivers
+v0x13af82eb0_0 .net8 "is_minus", 0 0, RS_0x12000de90;  alias, 2 drivers, strength-aware
+v0x13af82f80_0 .net8 "is_plus", 0 0, RS_0x12000e190;  alias, 2 drivers, strength-aware
+v0x13af83050_0 .net8 "is_zero", 0 0, RS_0x12000e490;  alias, 2 drivers, strength-aware
+RS_0x12000dd10 .resolv tri, L_0x13af864b0, L_0x13af86580;
+v0x13af83120_0 .net8 "not_in0", 0 0, RS_0x12000dd10;  2 drivers, strength-aware
+RS_0x12000dce0 .resolv tri, L_0x13af86230, L_0x13af86300;
+v0x13af831f0_0 .net8 "not_in1", 0 0, RS_0x12000dce0;  2 drivers, strength-aware
+L_0x13af86410 .part v0x13c120c40_0, 1, 1;
+L_0x13af86690 .part v0x13c120c40_0, 0, 1;
+L_0x13af872a0 .part v0x13c120c40_0, 0, 1;
+L_0x13af878f0 .part v0x13c120c40_0, 1, 1;
+S_0x13af7f270 .scope module, "a_minus" "and_gate" 4 105, 4 61 0, S_0x13af7f030;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13af7fff0_0 .net8 "in1", 0 0, RS_0x12000dce0;  alias, 2 drivers, strength-aware
+v0x13af800a0_0 .net8 "in2", 0 0, RS_0x12000dd10;  alias, 2 drivers, strength-aware
+RS_0x12000dd70 .resolv tri, L_0x13af86730, L_0x13af868e0, L_0x13af86ae0;
+v0x13af80150_0 .net8 "nand_out", 0 0, RS_0x12000dd70;  3 drivers, strength-aware
+v0x13af80240_0 .net8 "out", 0 0, RS_0x12000de90;  alias, 2 drivers, strength-aware
+S_0x13af7f4b0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13af7f270;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c1241b0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af86730 .functor PMOS 1, L_0x13c1241b0, RS_0x12000dce0, C4<0>, C4<0>;
+L_0x13af868e0 .functor PMOS 1, L_0x13c1241b0, RS_0x12000dd10, C4<0>, C4<0>;
+L_0x13c124100 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af86a70 .functor NMOS 1, L_0x13c124100, RS_0x12000dce0, C4<0>, C4<0>;
+L_0x13af86ae0 .functor NMOS 1, L_0x13af86a70, RS_0x12000dd10, C4<0>, C4<0>;
+v0x13af7f6f0_0 .net8 "gnd", 0 0, L_0x13c124100;  1 drivers, strength-aware
+v0x13af7f7a0_0 .net8 "in1", 0 0, RS_0x12000dce0;  alias, 2 drivers, strength-aware
+v0x13af7f840_0 .net8 "in2", 0 0, RS_0x12000dd10;  alias, 2 drivers, strength-aware
+v0x13af7f8f0_0 .net8 "nmos1_out", 0 0, L_0x13af86a70;  1 drivers, strength-aware
+v0x13af7f990_0 .net8 "out", 0 0, RS_0x12000dd70;  alias, 3 drivers, strength-aware
+v0x13af7fa70_0 .net8 "pwr", 0 0, L_0x13c1241b0;  1 drivers, strength-aware
+S_0x13af7fb40 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13af7f270;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c124300 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af86b90 .functor PMOS 1, L_0x13c124300, RS_0x12000dd70, C4<0>, C4<0>;
+L_0x13c124250 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af86ca0 .functor NMOS 1, L_0x13c124250, RS_0x12000dd70, C4<0>, C4<0>;
+v0x13af7fd40_0 .net8 "gnd", 0 0, L_0x13c124250;  1 drivers, strength-aware
+v0x13af7fdd0_0 .net8 "in", 0 0, RS_0x12000dd70;  alias, 3 drivers, strength-aware
+v0x13af7fe90_0 .net8 "out", 0 0, RS_0x12000de90;  alias, 2 drivers, strength-aware
+v0x13af7ff40_0 .net8 "vdd", 0 0, L_0x13c124300;  1 drivers, strength-aware
+S_0x13af802f0 .scope module, "a_plus" "and_gate" 4 111, 4 61 0, S_0x13af7f030;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13af81040_0 .net "in1", 0 0, L_0x13af878f0;  1 drivers
+v0x13af810f0_0 .net8 "in2", 0 0, RS_0x12000dd10;  alias, 2 drivers, strength-aware
+RS_0x12000e070 .resolv tri, L_0x13af873e0, L_0x13af874d0, L_0x13af876a0;
+v0x13af81180_0 .net8 "nand_out", 0 0, RS_0x12000e070;  3 drivers, strength-aware
+v0x13af81270_0 .net8 "out", 0 0, RS_0x12000e190;  alias, 2 drivers, strength-aware
+S_0x13af80500 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13af802f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c1246f0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af873e0 .functor PMOS 1, L_0x13c1246f0, L_0x13af878f0, C4<0>, C4<0>;
+L_0x13af874d0 .functor PMOS 1, L_0x13c1246f0, RS_0x12000dd10, C4<0>, C4<0>;
+L_0x13c124640 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af875c0 .functor NMOS 1, L_0x13c124640, L_0x13af878f0, C4<0>, C4<0>;
+L_0x13af876a0 .functor NMOS 1, L_0x13af875c0, RS_0x12000dd10, C4<0>, C4<0>;
+v0x13af80730_0 .net8 "gnd", 0 0, L_0x13c124640;  1 drivers, strength-aware
+v0x13af807e0_0 .net "in1", 0 0, L_0x13af878f0;  alias, 1 drivers
+v0x13af80880_0 .net8 "in2", 0 0, RS_0x12000dd10;  alias, 2 drivers, strength-aware
+v0x13af80970_0 .net8 "nmos1_out", 0 0, L_0x13af875c0;  1 drivers, strength-aware
+v0x13af80a00_0 .net8 "out", 0 0, RS_0x12000e070;  alias, 3 drivers, strength-aware
+v0x13af80ad0_0 .net8 "pwr", 0 0, L_0x13c1246f0;  1 drivers, strength-aware
+S_0x13af80b90 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13af802f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c124840 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af87750 .functor PMOS 1, L_0x13c124840, RS_0x12000e070, C4<0>, C4<0>;
+L_0x13c124790 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af87820 .functor NMOS 1, L_0x13c124790, RS_0x12000e070, C4<0>, C4<0>;
+v0x13af80d90_0 .net8 "gnd", 0 0, L_0x13c124790;  1 drivers, strength-aware
+v0x13af80e20_0 .net8 "in", 0 0, RS_0x12000e070;  alias, 3 drivers, strength-aware
+v0x13af80ee0_0 .net8 "out", 0 0, RS_0x12000e190;  alias, 2 drivers, strength-aware
+v0x13af80f90_0 .net8 "vdd", 0 0, L_0x13c124840;  1 drivers, strength-aware
+S_0x13af81320 .scope module, "a_zero" "and_gate" 4 108, 4 61 0, S_0x13af7f030;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13af82090_0 .net8 "in1", 0 0, RS_0x12000dce0;  alias, 2 drivers, strength-aware
+v0x13af82120_0 .net "in2", 0 0, L_0x13af872a0;  1 drivers
+RS_0x12000e370 .resolv tri, L_0x13af86d70, L_0x13af86e60, L_0x13af87070;
+v0x13af821e0_0 .net8 "nand_out", 0 0, RS_0x12000e370;  3 drivers, strength-aware
+v0x13af822d0_0 .net8 "out", 0 0, RS_0x12000e490;  alias, 2 drivers, strength-aware
+S_0x13af81550 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13af81320;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c124450 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af86d70 .functor PMOS 1, L_0x13c124450, RS_0x12000dce0, C4<0>, C4<0>;
+L_0x13af86e60 .functor PMOS 1, L_0x13c124450, L_0x13af872a0, C4<0>, C4<0>;
+L_0x13c1243a0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af86f70 .functor NMOS 1, L_0x13c1243a0, RS_0x12000dce0, C4<0>, C4<0>;
+L_0x13af87070 .functor NMOS 1, L_0x13af86f70, L_0x13af872a0, C4<0>, C4<0>;
+v0x13af81780_0 .net8 "gnd", 0 0, L_0x13c1243a0;  1 drivers, strength-aware
+v0x13af81830_0 .net8 "in1", 0 0, RS_0x12000dce0;  alias, 2 drivers, strength-aware
+v0x13af81910_0 .net "in2", 0 0, L_0x13af872a0;  alias, 1 drivers
+v0x13af819a0_0 .net8 "nmos1_out", 0 0, L_0x13af86f70;  1 drivers, strength-aware
+v0x13af81a30_0 .net8 "out", 0 0, RS_0x12000e370;  alias, 3 drivers, strength-aware
+v0x13af81b10_0 .net8 "pwr", 0 0, L_0x13c124450;  1 drivers, strength-aware
+S_0x13af81be0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13af81320;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1245a0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af87120 .functor PMOS 1, L_0x13c1245a0, RS_0x12000e370, C4<0>, C4<0>;
+L_0x13c1244f0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af871d0 .functor NMOS 1, L_0x13c1244f0, RS_0x12000e370, C4<0>, C4<0>;
+v0x13af81de0_0 .net8 "gnd", 0 0, L_0x13c1244f0;  1 drivers, strength-aware
+v0x13af81e70_0 .net8 "in", 0 0, RS_0x12000e370;  alias, 3 drivers, strength-aware
+v0x13af81f30_0 .net8 "out", 0 0, RS_0x12000e490;  alias, 2 drivers, strength-aware
+v0x13af81fe0_0 .net8 "vdd", 0 0, L_0x13c1245a0;  1 drivers, strength-aware
+S_0x13af82380 .scope module, "inv0" "not_gate" 4 102, 4 2 0, S_0x13af7f030;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c124060 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af864b0 .functor PMOS 1, L_0x13c124060, L_0x13af86690, C4<0>, C4<0>;
+L_0x13c123fb0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af86580 .functor NMOS 1, L_0x13c123fb0, L_0x13af86690, C4<0>, C4<0>;
+v0x13af82570_0 .net8 "gnd", 0 0, L_0x13c123fb0;  1 drivers, strength-aware
+v0x13af82620_0 .net "in", 0 0, L_0x13af86690;  1 drivers
+v0x13af826c0_0 .net8 "out", 0 0, RS_0x12000dd10;  alias, 2 drivers, strength-aware
+v0x13af827d0_0 .net8 "vdd", 0 0, L_0x13c124060;  1 drivers, strength-aware
+S_0x13af82890 .scope module, "inv1" "not_gate" 4 101, 4 2 0, S_0x13af7f030;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c123f10 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af86230 .functor PMOS 1, L_0x13c123f10, L_0x13af86410, C4<0>, C4<0>;
+L_0x13c123e60 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af86300 .functor NMOS 1, L_0x13c123e60, L_0x13af86410, C4<0>, C4<0>;
+v0x13af82a80_0 .net8 "gnd", 0 0, L_0x13c123e60;  1 drivers, strength-aware
+v0x13af82b30_0 .net "in", 0 0, L_0x13af86410;  1 drivers
+v0x13af82bd0_0 .net8 "out", 0 0, RS_0x12000dce0;  alias, 2 drivers, strength-aware
+v0x13af82ce0_0 .net8 "vdd", 0 0, L_0x13c123f10;  1 drivers, strength-aware
+S_0x13af83280 .scope module, "enc" "encode_ternary" 4 188, 4 114 0, S_0x13ae12260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "is_minus";
+    .port_info 1 /INPUT 1 "is_zero";
+    .port_info 2 /INPUT 1 "is_plus";
+    .port_info 3 /OUTPUT 2 "out";
+L_0x13af89d30 .functor BUFZ 1, RS_0x12000e910, C4<0>, C4<0>, C4<0>;
+L_0x13af89f60 .functor BUFZ 1, RS_0x12000cf90, C4<0>, C4<0>, C4<0>;
+v0x13af834a0_0 .net *"_ivl_3", 0 0, L_0x13af89d30;  1 drivers
+v0x13af83530_0 .net *"_ivl_8", 0 0, L_0x13af89f60;  1 drivers
+v0x13af835d0_0 .net8 "is_minus", 0 0, RS_0x12000e8e0;  alias, 2 drivers, strength-aware
+v0x13af83680_0 .net8 "is_plus", 0 0, RS_0x12000e910;  alias, 2 drivers, strength-aware
+v0x13af83720_0 .net8 "is_zero", 0 0, RS_0x12000cf90;  alias, 2 drivers, strength-aware
+v0x13af83830_0 .net "out", 1 0, L_0x13af89dc0;  alias, 1 drivers
+L_0x13af89dc0 .concat8 [ 1 1 0 0], L_0x13af89f60, L_0x13af89d30;
+S_0x13af83920 .scope module, "inv1" "not_gate" 4 174, 4 2 0, S_0x13ae12260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c124c20 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af88420 .functor PMOS 1, L_0x13c124c20, RS_0x12000e910, C4<0>, C4<0>;
+L_0x13c124b80 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af88550 .functor NMOS 1, L_0x13c124b80, RS_0x12000e910, C4<0>, C4<0>;
+v0x13af83b50_0 .net8 "gnd", 0 0, L_0x13c124b80;  1 drivers, strength-aware
+v0x13af83bf0_0 .net8 "in", 0 0, RS_0x12000e910;  alias, 2 drivers, strength-aware
+v0x13af83c90_0 .net8 "out", 0 0, RS_0x12000cde0;  alias, 2 drivers, strength-aware
+v0x13af83d80_0 .net8 "vdd", 0 0, L_0x13c124c20;  1 drivers, strength-aware
+S_0x13af83e20 .scope module, "inv2" "not_gate" 4 186, 4 2 0, S_0x13ae12260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1254d0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af89af0 .functor PMOS 1, L_0x13c1254d0, RS_0x12000eb20, C4<0>, C4<0>;
+L_0x13c125430 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af89be0 .functor NMOS 1, L_0x13c125430, RS_0x12000eb20, C4<0>, C4<0>;
+v0x13af84010_0 .net8 "gnd", 0 0, L_0x13c125430;  1 drivers, strength-aware
+v0x13af840c0_0 .net8 "in", 0 0, RS_0x12000eb20;  alias, 2 drivers, strength-aware
+v0x13af84160_0 .net8 "out", 0 0, RS_0x12000e8e0;  alias, 2 drivers, strength-aware
+v0x13af84230_0 .net8 "vdd", 0 0, L_0x13c1254d0;  1 drivers, strength-aware
+S_0x13af842e0 .scope module, "or_p" "or_gate" 4 171, 4 75 0, S_0x13ae12260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c109440_0 .net8 "in1", 0 0, RS_0x12000d5c0;  alias, 2 drivers, strength-aware
+v0x13c119ca0_0 .net8 "in2", 0 0, RS_0x12000e190;  alias, 2 drivers, strength-aware
+RS_0x12000ec10 .resolv tri, L_0x13af87de0, L_0x13af87fb0, L_0x13af88110;
+v0x13c10e1f0_0 .net8 "nor_out", 0 0, RS_0x12000ec10;  3 drivers, strength-aware
+v0x13c10e280_0 .net8 "out", 0 0, RS_0x12000e910;  alias, 2 drivers, strength-aware
+S_0x13af84510 .scope module, "nor_gate1" "nor_gate" 4 83, 4 43 0, S_0x13af842e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c124990 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af87c10 .functor PMOS 1, L_0x13c124990, RS_0x12000d5c0, C4<0>, C4<0>;
+L_0x13af87de0 .functor PMOS 1, L_0x13af87c10, RS_0x12000e190, C4<0>, C4<0>;
+L_0x13c1248e0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af87fb0 .functor NMOS 1, L_0x13c1248e0, RS_0x12000d5c0, C4<0>, C4<0>;
+L_0x13af88110 .functor NMOS 1, L_0x13c1248e0, RS_0x12000e190, C4<0>, C4<0>;
+v0x13af84740_0 .net8 "gnd", 0 0, L_0x13c1248e0;  1 drivers, strength-aware
+v0x13af847f0_0 .net8 "in1", 0 0, RS_0x12000d5c0;  alias, 2 drivers, strength-aware
+v0x13af84890_0 .net8 "in2", 0 0, RS_0x12000e190;  alias, 2 drivers, strength-aware
+v0x13af84940_0 .net8 "out", 0 0, RS_0x12000ec10;  alias, 3 drivers, strength-aware
+v0x13af849d0_0 .net8 "pmos1_out", 0 0, L_0x13af87c10;  1 drivers, strength-aware
+v0x13af84aa0_0 .net8 "pwr", 0 0, L_0x13c124990;  1 drivers, strength-aware
+S_0x13af84b70 .scope module, "not_gate1" "not_gate" 4 84, 4 2 0, S_0x13af842e0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c124ae0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af88180 .functor PMOS 1, L_0x13c124ae0, RS_0x12000ec10, C4<0>, C4<0>;
+L_0x13c124a30 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af88250 .functor NMOS 1, L_0x13c124a30, RS_0x12000ec10, C4<0>, C4<0>;
+v0x13af84d70_0 .net8 "gnd", 0 0, L_0x13c124a30;  1 drivers, strength-aware
+v0x13af84e00_0 .net8 "in", 0 0, RS_0x12000ec10;  alias, 3 drivers, strength-aware
+v0x13af84ec0_0 .net8 "out", 0 0, RS_0x12000e910;  alias, 2 drivers, strength-aware
+v0x13af84fb0_0 .net8 "vdd", 0 0, L_0x13c124ae0;  1 drivers, strength-aware
+S_0x13c10e310 .scope module, "or_pz" "or_gate" 4 183, 4 75 0, S_0x13ae12260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c105600_0 .net8 "in1", 0 0, RS_0x12000e910;  alias, 2 drivers, strength-aware
+v0x13c105690_0 .net8 "in2", 0 0, RS_0x12000cf90;  alias, 2 drivers, strength-aware
+RS_0x12000eeb0 .resolv tri, L_0x13af89510, L_0x13af896e0, L_0x13af89840;
+v0x13c105720_0 .net8 "nor_out", 0 0, RS_0x12000eeb0;  3 drivers, strength-aware
+v0x13c1057b0_0 .net8 "out", 0 0, RS_0x12000eb20;  alias, 2 drivers, strength-aware
+S_0x13c108120 .scope module, "nor_gate1" "nor_gate" 4 83, 4 43 0, S_0x13c10e310;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c125260 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af89400 .functor PMOS 1, L_0x13c125260, RS_0x12000e910, C4<0>, C4<0>;
+L_0x13af89510 .functor PMOS 1, L_0x13af89400, RS_0x12000cf90, C4<0>, C4<0>;
+L_0x13c1251c0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af896e0 .functor NMOS 1, L_0x13c1251c0, RS_0x12000e910, C4<0>, C4<0>;
+L_0x13af89840 .functor NMOS 1, L_0x13c1251c0, RS_0x12000cf90, C4<0>, C4<0>;
+v0x13c108290_0 .net8 "gnd", 0 0, L_0x13c1251c0;  1 drivers, strength-aware
+v0x13c108320_0 .net8 "in1", 0 0, RS_0x12000e910;  alias, 2 drivers, strength-aware
+v0x13c106510_0 .net8 "in2", 0 0, RS_0x12000cf90;  alias, 2 drivers, strength-aware
+v0x13c1065a0_0 .net8 "out", 0 0, RS_0x12000eeb0;  alias, 3 drivers, strength-aware
+v0x13c106630_0 .net8 "pmos1_out", 0 0, L_0x13af89400;  1 drivers, strength-aware
+v0x13c1066c0_0 .net8 "pwr", 0 0, L_0x13c125260;  1 drivers, strength-aware
+S_0x13c1074a0 .scope module, "not_gate1" "not_gate" 4 84, 4 2 0, S_0x13c10e310;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c125390 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af898b0 .functor PMOS 1, L_0x13c125390, RS_0x12000eeb0, C4<0>, C4<0>;
+L_0x13c125300 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af89a20 .functor NMOS 1, L_0x13c125300, RS_0x12000eeb0, C4<0>, C4<0>;
+v0x13c106750_0 .net8 "gnd", 0 0, L_0x13c125300;  1 drivers, strength-aware
+v0x13c107610_0 .net8 "in", 0 0, RS_0x12000eeb0;  alias, 3 drivers, strength-aware
+v0x13c1076a0_0 .net8 "out", 0 0, RS_0x12000eb20;  alias, 2 drivers, strength-aware
+v0x13c105570_0 .net8 "vdd", 0 0, L_0x13c125390;  1 drivers, strength-aware
+S_0x13c10c070 .scope module, "or_z" "or_gate" 4 177, 4 75 0, S_0x13ae12260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c11b3b0_0 .net8 "in1", 0 0, RS_0x12000d8c0;  alias, 2 drivers, strength-aware
+v0x13c11b4c0_0 .net8 "in2", 0 0, RS_0x12000e490;  alias, 2 drivers, strength-aware
+RS_0x12000f150 .resolv tri, L_0x13af88830, L_0x13af88a00, L_0x13af88b60;
+v0x13c11b5d0_0 .net8 "nor_out", 0 0, RS_0x12000f150;  3 drivers, strength-aware
+v0x13c11b660_0 .net8 "out", 0 0, RS_0x12000ce10;  alias, 2 drivers, strength-aware
+S_0x13c10c1e0 .scope module, "nor_gate1" "nor_gate" 4 83, 4 43 0, S_0x13c10c070;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c124d60 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af88620 .functor PMOS 1, L_0x13c124d60, RS_0x12000d8c0, C4<0>, C4<0>;
+L_0x13af88830 .functor PMOS 1, L_0x13af88620, RS_0x12000e490, C4<0>, C4<0>;
+L_0x13c124cc0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af88a00 .functor NMOS 1, L_0x13c124cc0, RS_0x12000d8c0, C4<0>, C4<0>;
+L_0x13af88b60 .functor NMOS 1, L_0x13c124cc0, RS_0x12000e490, C4<0>, C4<0>;
+v0x13c11aca0_0 .net8 "gnd", 0 0, L_0x13c124cc0;  1 drivers, strength-aware
+v0x13c11ad30_0 .net8 "in1", 0 0, RS_0x12000d8c0;  alias, 2 drivers, strength-aware
+v0x13c11adc0_0 .net8 "in2", 0 0, RS_0x12000e490;  alias, 2 drivers, strength-aware
+v0x13c11ae50_0 .net8 "out", 0 0, RS_0x12000f150;  alias, 3 drivers, strength-aware
+v0x13c11aee0_0 .net8 "pmos1_out", 0 0, L_0x13af88620;  1 drivers, strength-aware
+v0x13c11af70_0 .net8 "pwr", 0 0, L_0x13c124d60;  1 drivers, strength-aware
+S_0x13c11b000 .scope module, "not_gate1" "not_gate" 4 84, 4 2 0, S_0x13c10c070;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c124e90 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13af88bd0 .functor PMOS 1, L_0x13c124e90, RS_0x12000f150, C4<0>, C4<0>;
+L_0x13c124e00 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13af88cc0 .functor NMOS 1, L_0x13c124e00, RS_0x12000f150, C4<0>, C4<0>;
+v0x13c11b170_0 .net8 "gnd", 0 0, L_0x13c124e00;  1 drivers, strength-aware
+v0x13c11b200_0 .net8 "in", 0 0, RS_0x12000f150;  alias, 3 drivers, strength-aware
+v0x13c11b290_0 .net8 "out", 0 0, RS_0x12000ce10;  alias, 2 drivers, strength-aware
+v0x13c11b320_0 .net8 "vdd", 0 0, L_0x13c124e90;  1 drivers, strength-aware
+S_0x13c11c060 .scope module, "min_to_test" "ternary_min" 3 24, 4 125 0, S_0x13c206c40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "a";
+    .port_info 1 /INPUT 2 "b";
+    .port_info 2 /OUTPUT 2 "out";
+v0x13c225d60_0 .net "a", 1 0, v0x13c226ff0_0;  alias, 1 drivers
+RS_0x12000f960 .resolv tri, L_0x13c12a300, L_0x13c12a3b0;
+v0x13c225e10_0 .net8 "a_minus", 0 0, RS_0x12000f960;  2 drivers, strength-aware
+RS_0x12000fc60 .resolv tri, L_0x13c12ad80, L_0x13c12ae70;
+v0x13c225eb0_0 .net8 "a_plus", 0 0, RS_0x12000fc60;  2 drivers, strength-aware
+RS_0x12000ff60 .resolv tri, L_0x13c12a7b0, L_0x13c12a860;
+v0x13c225f40_0 .net8 "a_zero", 0 0, RS_0x12000ff60;  2 drivers, strength-aware
+v0x13c225fd0_0 .net "b", 1 0, v0x13c120c40_0;  alias, 1 drivers
+RS_0x120010530 .resolv tri, L_0x13c12ba50, L_0x13c12bb00;
+v0x13c2260a0_0 .net8 "b_minus", 0 0, RS_0x120010530;  2 drivers, strength-aware
+RS_0x120010830 .resolv tri, L_0x13c12c5b0, L_0x13c12c6e0;
+v0x13c226130_0 .net8 "b_plus", 0 0, RS_0x120010830;  2 drivers, strength-aware
+RS_0x120010b30 .resolv tri, L_0x13c12bf80, L_0x13c12c030;
+v0x13c2261c0_0 .net8 "b_zero", 0 0, RS_0x120010b30;  2 drivers, strength-aware
+RS_0x1200111c0 .resolv tri, L_0x13c12e350, L_0x13c12e480;
+v0x13c226250_0 .net8 "minus_or_zero", 0 0, RS_0x1200111c0;  2 drivers, strength-aware
+RS_0x12000f480 .resolv tri, L_0x13c12d060, L_0x13c12d190;
+v0x13c226360_0 .net8 "not_out_minus", 0 0, RS_0x12000f480;  2 drivers, strength-aware
+v0x13c2263f0_0 .net "out", 1 0, L_0x13c12e7c0;  alias, 1 drivers
+RS_0x120010f80 .resolv tri, L_0x13c12cde0, L_0x13c12ce90;
+v0x13c226480_0 .net8 "out_minus", 0 0, RS_0x120010f80;  2 drivers, strength-aware
+RS_0x120010fb0 .resolv tri, L_0x13c12e550, L_0x13c12e600;
+v0x13c226510_0 .net8 "out_plus", 0 0, RS_0x120010fb0;  2 drivers, strength-aware
+RS_0x12000f630 .resolv tri, L_0x13c12dda0, L_0x13c12de50;
+v0x13c2265a0_0 .net8 "out_zero", 0 0, RS_0x12000f630;  2 drivers, strength-aware
+RS_0x12000f4b0 .resolv tri, L_0x13c12d7d0, L_0x13c12d880;
+v0x13c226630_0 .net8 "zero_or", 0 0, RS_0x12000f4b0;  2 drivers, strength-aware
+S_0x13c11c1d0 .scope module, "and_z" "and_gate" 4 147, 4 61 0, S_0x13c11c060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c11cbc0_0 .net8 "in1", 0 0, RS_0x12000f480;  alias, 2 drivers, strength-aware
+v0x13c11cc50_0 .net8 "in2", 0 0, RS_0x12000f4b0;  alias, 2 drivers, strength-aware
+RS_0x12000f510 .resolv tri, L_0x13c12d950, L_0x13c12da00, L_0x13c12dbf0;
+v0x13c11cce0_0 .net8 "nand_out", 0 0, RS_0x12000f510;  3 drivers, strength-aware
+v0x13c11cd70_0 .net8 "out", 0 0, RS_0x12000f630;  alias, 2 drivers, strength-aware
+S_0x13c11c340 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c11c1d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c122e30 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12d950 .functor PMOS 1, L_0x13c122e30, RS_0x12000f480, C4<0>, C4<0>;
+L_0x13c12da00 .functor PMOS 1, L_0x13c122e30, RS_0x12000f4b0, C4<0>, C4<0>;
+L_0x13c122d90 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12db10 .functor NMOS 1, L_0x13c122d90, RS_0x12000f480, C4<0>, C4<0>;
+L_0x13c12dbf0 .functor NMOS 1, L_0x13c12db10, RS_0x12000f4b0, C4<0>, C4<0>;
+v0x13c11c4b0_0 .net8 "gnd", 0 0, L_0x13c122d90;  1 drivers, strength-aware
+v0x13c11c540_0 .net8 "in1", 0 0, RS_0x12000f480;  alias, 2 drivers, strength-aware
+v0x13c11c5d0_0 .net8 "in2", 0 0, RS_0x12000f4b0;  alias, 2 drivers, strength-aware
+v0x13c11c660_0 .net8 "nmos1_out", 0 0, L_0x13c12db10;  1 drivers, strength-aware
+v0x13c11c6f0_0 .net8 "out", 0 0, RS_0x12000f510;  alias, 3 drivers, strength-aware
+v0x13c11c780_0 .net8 "pwr", 0 0, L_0x13c122e30;  1 drivers, strength-aware
+S_0x13c11c810 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c11c1d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c122f60 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12dda0 .functor PMOS 1, L_0x13c122f60, RS_0x12000f510, C4<0>, C4<0>;
+L_0x13c122ed0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12de50 .functor NMOS 1, L_0x13c122ed0, RS_0x12000f510, C4<0>, C4<0>;
+v0x13c11c980_0 .net8 "gnd", 0 0, L_0x13c122ed0;  1 drivers, strength-aware
+v0x13c11ca10_0 .net8 "in", 0 0, RS_0x12000f510;  alias, 3 drivers, strength-aware
+v0x13c11caa0_0 .net8 "out", 0 0, RS_0x12000f630;  alias, 2 drivers, strength-aware
+v0x13c11cb30_0 .net8 "vdd", 0 0, L_0x13c122f60;  1 drivers, strength-aware
+S_0x13c11ce00 .scope module, "decA" "decode_ternary" 4 131, 4 89 0, S_0x13c11c060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in";
+    .port_info 1 /OUTPUT 1 "is_minus";
+    .port_info 2 /OUTPUT 1 "is_zero";
+    .port_info 3 /OUTPUT 1 "is_plus";
+v0x13c11fc60_0 .net "in", 1 0, v0x13c226ff0_0;  alias, 1 drivers
+v0x13c11fcf0_0 .net8 "is_minus", 0 0, RS_0x12000f960;  alias, 2 drivers, strength-aware
+v0x13c11fd80_0 .net8 "is_plus", 0 0, RS_0x12000fc60;  alias, 2 drivers, strength-aware
+v0x13c11fe10_0 .net8 "is_zero", 0 0, RS_0x12000ff60;  alias, 2 drivers, strength-aware
+RS_0x12000f7e0 .resolv tri, L_0x13c129c50, L_0x13c129d00;
+v0x13c11fee0_0 .net8 "not_in0", 0 0, RS_0x12000f7e0;  2 drivers, strength-aware
+RS_0x12000f7b0 .resolv tri, L_0x13c1299b0, L_0x13c129aa0;
+v0x13c11ffb0_0 .net8 "not_in1", 0 0, RS_0x12000f7b0;  2 drivers, strength-aware
+L_0x13c129bb0 .part v0x13c226ff0_0, 1, 1;
+L_0x13c129e10 .part v0x13c226ff0_0, 0, 1;
+L_0x13c12a910 .part v0x13c226ff0_0, 0, 1;
+L_0x13c12af20 .part v0x13c226ff0_0, 1, 1;
+S_0x13c11cf70 .scope module, "a_minus" "and_gate" 4 105, 4 61 0, S_0x13c11ce00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c11d960_0 .net8 "in1", 0 0, RS_0x12000f7b0;  alias, 2 drivers, strength-aware
+v0x13c11d9f0_0 .net8 "in2", 0 0, RS_0x12000f7e0;  alias, 2 drivers, strength-aware
+RS_0x12000f840 .resolv tri, L_0x13c129eb0, L_0x13c11fb50, L_0x13c12a250;
+v0x13c11da80_0 .net8 "nand_out", 0 0, RS_0x12000f840;  3 drivers, strength-aware
+v0x13c11db10_0 .net8 "out", 0 0, RS_0x12000f960;  alias, 2 drivers, strength-aware
+S_0x13c11d0e0 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c11cf70;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c121620 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c129eb0 .functor PMOS 1, L_0x13c121620, RS_0x12000f7b0, C4<0>, C4<0>;
+L_0x13c11fb50 .functor PMOS 1, L_0x13c121620, RS_0x12000f7e0, C4<0>, C4<0>;
+L_0x13c1215b0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12a1e0 .functor NMOS 1, L_0x13c1215b0, RS_0x12000f7b0, C4<0>, C4<0>;
+L_0x13c12a250 .functor NMOS 1, L_0x13c12a1e0, RS_0x12000f7e0, C4<0>, C4<0>;
+v0x13c11d250_0 .net8 "gnd", 0 0, L_0x13c1215b0;  1 drivers, strength-aware
+v0x13c11d2e0_0 .net8 "in1", 0 0, RS_0x12000f7b0;  alias, 2 drivers, strength-aware
+v0x13c11d370_0 .net8 "in2", 0 0, RS_0x12000f7e0;  alias, 2 drivers, strength-aware
+v0x13c11d400_0 .net8 "nmos1_out", 0 0, L_0x13c12a1e0;  1 drivers, strength-aware
+v0x13c11d490_0 .net8 "out", 0 0, RS_0x12000f840;  alias, 3 drivers, strength-aware
+v0x13c11d520_0 .net8 "pwr", 0 0, L_0x13c121620;  1 drivers, strength-aware
+S_0x13c11d5b0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c11cf70;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c121740 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12a300 .functor PMOS 1, L_0x13c121740, RS_0x12000f840, C4<0>, C4<0>;
+L_0x13c1216b0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12a3b0 .functor NMOS 1, L_0x13c1216b0, RS_0x12000f840, C4<0>, C4<0>;
+v0x13c11d720_0 .net8 "gnd", 0 0, L_0x13c1216b0;  1 drivers, strength-aware
+v0x13c11d7b0_0 .net8 "in", 0 0, RS_0x12000f840;  alias, 3 drivers, strength-aware
+v0x13c11d840_0 .net8 "out", 0 0, RS_0x12000f960;  alias, 2 drivers, strength-aware
+v0x13c11d8d0_0 .net8 "vdd", 0 0, L_0x13c121740;  1 drivers, strength-aware
+S_0x13c11dba0 .scope module, "a_plus" "and_gate" 4 111, 4 61 0, S_0x13c11ce00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c11e590_0 .net "in1", 0 0, L_0x13c12af20;  1 drivers
+v0x13c11e620_0 .net8 "in2", 0 0, RS_0x12000f7e0;  alias, 2 drivers, strength-aware
+RS_0x12000fb40 .resolv tri, L_0x13c12aa30, L_0x13c12ab20, L_0x13c12acd0;
+v0x13c11e6b0_0 .net8 "nand_out", 0 0, RS_0x12000fb40;  3 drivers, strength-aware
+v0x13c11e740_0 .net8 "out", 0 0, RS_0x12000fc60;  alias, 2 drivers, strength-aware
+S_0x13c11dd10 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c11dba0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c121ad0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12aa30 .functor PMOS 1, L_0x13c121ad0, L_0x13c12af20, C4<0>, C4<0>;
+L_0x13c12ab20 .functor PMOS 1, L_0x13c121ad0, RS_0x12000f7e0, C4<0>, C4<0>;
+L_0x13c121a40 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12ac10 .functor NMOS 1, L_0x13c121a40, L_0x13c12af20, C4<0>, C4<0>;
+L_0x13c12acd0 .functor NMOS 1, L_0x13c12ac10, RS_0x12000f7e0, C4<0>, C4<0>;
+v0x13c11de80_0 .net8 "gnd", 0 0, L_0x13c121a40;  1 drivers, strength-aware
+v0x13c11df10_0 .net "in1", 0 0, L_0x13c12af20;  alias, 1 drivers
+v0x13c11dfa0_0 .net8 "in2", 0 0, RS_0x12000f7e0;  alias, 2 drivers, strength-aware
+v0x13c11e030_0 .net8 "nmos1_out", 0 0, L_0x13c12ac10;  1 drivers, strength-aware
+v0x13c11e0c0_0 .net8 "out", 0 0, RS_0x12000fb40;  alias, 3 drivers, strength-aware
+v0x13c11e150_0 .net8 "pwr", 0 0, L_0x13c121ad0;  1 drivers, strength-aware
+S_0x13c11e1e0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c11dba0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c121c00 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12ad80 .functor PMOS 1, L_0x13c121c00, RS_0x12000fb40, C4<0>, C4<0>;
+L_0x13c121b70 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12ae70 .functor NMOS 1, L_0x13c121b70, RS_0x12000fb40, C4<0>, C4<0>;
+v0x13c11e350_0 .net8 "gnd", 0 0, L_0x13c121b70;  1 drivers, strength-aware
+v0x13c11e3e0_0 .net8 "in", 0 0, RS_0x12000fb40;  alias, 3 drivers, strength-aware
+v0x13c11e470_0 .net8 "out", 0 0, RS_0x12000fc60;  alias, 2 drivers, strength-aware
+v0x13c11e500_0 .net8 "vdd", 0 0, L_0x13c121c00;  1 drivers, strength-aware
+S_0x13c11e7d0 .scope module, "a_zero" "and_gate" 4 108, 4 61 0, S_0x13c11ce00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c11f1c0_0 .net8 "in1", 0 0, RS_0x12000f7b0;  alias, 2 drivers, strength-aware
+v0x13c11f250_0 .net "in2", 0 0, L_0x13c12a910;  1 drivers
+RS_0x12000fe40 .resolv tri, L_0x13c12a460, L_0x13c12a510, L_0x13c12a700;
+v0x13c11f2e0_0 .net8 "nand_out", 0 0, RS_0x12000fe40;  3 drivers, strength-aware
+v0x13c11f370_0 .net8 "out", 0 0, RS_0x12000ff60;  alias, 2 drivers, strength-aware
+S_0x13c11e940 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c11e7d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c121870 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12a460 .functor PMOS 1, L_0x13c121870, RS_0x12000f7b0, C4<0>, C4<0>;
+L_0x13c12a510 .functor PMOS 1, L_0x13c121870, L_0x13c12a910, C4<0>, C4<0>;
+L_0x13c1217e0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12a600 .functor NMOS 1, L_0x13c1217e0, RS_0x12000f7b0, C4<0>, C4<0>;
+L_0x13c12a700 .functor NMOS 1, L_0x13c12a600, L_0x13c12a910, C4<0>, C4<0>;
+v0x13c11eab0_0 .net8 "gnd", 0 0, L_0x13c1217e0;  1 drivers, strength-aware
+v0x13c11eb40_0 .net8 "in1", 0 0, RS_0x12000f7b0;  alias, 2 drivers, strength-aware
+v0x13c11ebd0_0 .net "in2", 0 0, L_0x13c12a910;  alias, 1 drivers
+v0x13c11ec60_0 .net8 "nmos1_out", 0 0, L_0x13c12a600;  1 drivers, strength-aware
+v0x13c11ecf0_0 .net8 "out", 0 0, RS_0x12000fe40;  alias, 3 drivers, strength-aware
+v0x13c11ed80_0 .net8 "pwr", 0 0, L_0x13c121870;  1 drivers, strength-aware
+S_0x13c11ee10 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c11e7d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1219a0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12a7b0 .functor PMOS 1, L_0x13c1219a0, RS_0x12000fe40, C4<0>, C4<0>;
+L_0x13c121910 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12a860 .functor NMOS 1, L_0x13c121910, RS_0x12000fe40, C4<0>, C4<0>;
+v0x13c11ef80_0 .net8 "gnd", 0 0, L_0x13c121910;  1 drivers, strength-aware
+v0x13c11f010_0 .net8 "in", 0 0, RS_0x12000fe40;  alias, 3 drivers, strength-aware
+v0x13c11f0a0_0 .net8 "out", 0 0, RS_0x12000ff60;  alias, 2 drivers, strength-aware
+v0x13c11f130_0 .net8 "vdd", 0 0, L_0x13c1219a0;  1 drivers, strength-aware
+S_0x13c11f400 .scope module, "inv0" "not_gate" 4 102, 4 2 0, S_0x13c11ce00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c121540 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c129c50 .functor PMOS 1, L_0x13c121540, L_0x13c129e10, C4<0>, C4<0>;
+L_0x13c1214d0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c129d00 .functor NMOS 1, L_0x13c1214d0, L_0x13c129e10, C4<0>, C4<0>;
+v0x13c11f570_0 .net8 "gnd", 0 0, L_0x13c1214d0;  1 drivers, strength-aware
+v0x13c11f600_0 .net "in", 0 0, L_0x13c129e10;  1 drivers
+v0x13c11f690_0 .net8 "out", 0 0, RS_0x12000f7e0;  alias, 2 drivers, strength-aware
+v0x13c11f7a0_0 .net8 "vdd", 0 0, L_0x13c121540;  1 drivers, strength-aware
+S_0x13c11f830 .scope module, "inv1" "not_gate" 4 101, 4 2 0, S_0x13c11ce00;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c121460 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c1299b0 .functor PMOS 1, L_0x13c121460, L_0x13c129bb0, C4<0>, C4<0>;
+L_0x13c1213f0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c129aa0 .functor NMOS 1, L_0x13c1213f0, L_0x13c129bb0, C4<0>, C4<0>;
+v0x13c11f9a0_0 .net8 "gnd", 0 0, L_0x13c1213f0;  1 drivers, strength-aware
+v0x13c11fa30_0 .net "in", 0 0, L_0x13c129bb0;  1 drivers
+v0x13c11fac0_0 .net8 "out", 0 0, RS_0x12000f7b0;  alias, 2 drivers, strength-aware
+v0x13c11fbd0_0 .net8 "vdd", 0 0, L_0x13c121460;  1 drivers, strength-aware
+S_0x13c120040 .scope module, "decB" "decode_ternary" 4 134, 4 89 0, S_0x13c11c060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in";
+    .port_info 1 /OUTPUT 1 "is_minus";
+    .port_info 2 /OUTPUT 1 "is_zero";
+    .port_info 3 /OUTPUT 1 "is_plus";
+v0x13c2215e0_0 .net "in", 1 0, v0x13c120c40_0;  alias, 1 drivers
+v0x13c221670_0 .net8 "is_minus", 0 0, RS_0x120010530;  alias, 2 drivers, strength-aware
+v0x13c221740_0 .net8 "is_plus", 0 0, RS_0x120010830;  alias, 2 drivers, strength-aware
+v0x13c221810_0 .net8 "is_zero", 0 0, RS_0x120010b30;  alias, 2 drivers, strength-aware
+RS_0x1200103b0 .resolv tri, L_0x13c12b280, L_0x13c12b330;
+v0x13c2218e0_0 .net8 "not_in0", 0 0, RS_0x1200103b0;  2 drivers, strength-aware
+RS_0x120010380 .resolv tri, L_0x13c12b040, L_0x13c12b0d0;
+v0x13c2219b0_0 .net8 "not_in1", 0 0, RS_0x120010380;  2 drivers, strength-aware
+L_0x13c12b1e0 .part v0x13c120c40_0, 1, 1;
+L_0x13c12b440 .part v0x13c120c40_0, 0, 1;
+L_0x13c12c0e0 .part v0x13c120c40_0, 0, 1;
+L_0x13c12c790 .part v0x13c120c40_0, 1, 1;
+S_0x13c120260 .scope module, "a_minus" "and_gate" 4 105, 4 61 0, S_0x13c120040;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c21e850_0 .net8 "in1", 0 0, RS_0x120010380;  alias, 2 drivers, strength-aware
+v0x13c21e8e0_0 .net8 "in2", 0 0, RS_0x1200103b0;  alias, 2 drivers, strength-aware
+RS_0x120010410 .resolv tri, L_0x13c12b4e0, L_0x13c12b690, L_0x13c12b9a0;
+v0x13c21e970_0 .net8 "nand_out", 0 0, RS_0x120010410;  3 drivers, strength-aware
+v0x13c21ea40_0 .net8 "out", 0 0, RS_0x120010530;  alias, 2 drivers, strength-aware
+S_0x13c120470 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c120260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c121fd0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12b4e0 .functor PMOS 1, L_0x13c121fd0, RS_0x120010380, C4<0>, C4<0>;
+L_0x13c12b690 .functor PMOS 1, L_0x13c121fd0, RS_0x1200103b0, C4<0>, C4<0>;
+L_0x13c121f30 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12b880 .functor NMOS 1, L_0x13c121f30, RS_0x120010380, C4<0>, C4<0>;
+L_0x13c12b9a0 .functor NMOS 1, L_0x13c12b880, RS_0x1200103b0, C4<0>, C4<0>;
+v0x13c1206a0_0 .net8 "gnd", 0 0, L_0x13c121f30;  1 drivers, strength-aware
+v0x13c120750_0 .net8 "in1", 0 0, RS_0x120010380;  alias, 2 drivers, strength-aware
+v0x13c1207f0_0 .net8 "in2", 0 0, RS_0x1200103b0;  alias, 2 drivers, strength-aware
+v0x13c1208a0_0 .net8 "nmos1_out", 0 0, L_0x13c12b880;  1 drivers, strength-aware
+v0x13c120940_0 .net8 "out", 0 0, RS_0x120010410;  alias, 3 drivers, strength-aware
+v0x13c120a20_0 .net8 "pwr", 0 0, L_0x13c121fd0;  1 drivers, strength-aware
+S_0x13c21e450 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c120260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c122120 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12ba50 .functor PMOS 1, L_0x13c122120, RS_0x120010410, C4<0>, C4<0>;
+L_0x13c122070 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12bb00 .functor NMOS 1, L_0x13c122070, RS_0x120010410, C4<0>, C4<0>;
+v0x13c21e610_0 .net8 "gnd", 0 0, L_0x13c122070;  1 drivers, strength-aware
+v0x13c21e6a0_0 .net8 "in", 0 0, RS_0x120010410;  alias, 3 drivers, strength-aware
+v0x13c21e730_0 .net8 "out", 0 0, RS_0x120010530;  alias, 2 drivers, strength-aware
+v0x13c21e7c0_0 .net8 "vdd", 0 0, L_0x13c122120;  1 drivers, strength-aware
+S_0x13c21eaf0 .scope module, "a_plus" "and_gate" 4 111, 4 61 0, S_0x13c120040;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c21f880_0 .net "in1", 0 0, L_0x13c12c790;  1 drivers
+v0x13c21f930_0 .net8 "in2", 0 0, RS_0x1200103b0;  alias, 2 drivers, strength-aware
+RS_0x120010710 .resolv tri, L_0x13c12c200, L_0x13c12c2f0, L_0x13c12c500;
+v0x13c21f9c0_0 .net8 "nand_out", 0 0, RS_0x120010710;  3 drivers, strength-aware
+v0x13c21fab0_0 .net8 "out", 0 0, RS_0x120010830;  alias, 2 drivers, strength-aware
+S_0x13c21ed30 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c21eaf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c122510 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12c200 .functor PMOS 1, L_0x13c122510, L_0x13c12c790, C4<0>, C4<0>;
+L_0x13c12c2f0 .functor PMOS 1, L_0x13c122510, RS_0x1200103b0, C4<0>, C4<0>;
+L_0x13c122460 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12c3e0 .functor NMOS 1, L_0x13c122460, L_0x13c12c790, C4<0>, C4<0>;
+L_0x13c12c500 .functor NMOS 1, L_0x13c12c3e0, RS_0x1200103b0, C4<0>, C4<0>;
+v0x13c21ef70_0 .net8 "gnd", 0 0, L_0x13c122460;  1 drivers, strength-aware
+v0x13c21f020_0 .net "in1", 0 0, L_0x13c12c790;  alias, 1 drivers
+v0x13c21f0c0_0 .net8 "in2", 0 0, RS_0x1200103b0;  alias, 2 drivers, strength-aware
+v0x13c21f1b0_0 .net8 "nmos1_out", 0 0, L_0x13c12c3e0;  1 drivers, strength-aware
+v0x13c21f240_0 .net8 "out", 0 0, RS_0x120010710;  alias, 3 drivers, strength-aware
+v0x13c21f310_0 .net8 "pwr", 0 0, L_0x13c122510;  1 drivers, strength-aware
+S_0x13c21f3d0 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c21eaf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c122660 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12c5b0 .functor PMOS 1, L_0x13c122660, RS_0x120010710, C4<0>, C4<0>;
+L_0x13c1225b0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12c6e0 .functor NMOS 1, L_0x13c1225b0, RS_0x120010710, C4<0>, C4<0>;
+v0x13c21f5d0_0 .net8 "gnd", 0 0, L_0x13c1225b0;  1 drivers, strength-aware
+v0x13c21f660_0 .net8 "in", 0 0, RS_0x120010710;  alias, 3 drivers, strength-aware
+v0x13c21f720_0 .net8 "out", 0 0, RS_0x120010830;  alias, 2 drivers, strength-aware
+v0x13c21f7d0_0 .net8 "vdd", 0 0, L_0x13c122660;  1 drivers, strength-aware
+S_0x13c21fb60 .scope module, "a_zero" "and_gate" 4 108, 4 61 0, S_0x13c120040;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c2208d0_0 .net8 "in1", 0 0, RS_0x120010380;  alias, 2 drivers, strength-aware
+v0x13c220960_0 .net "in2", 0 0, L_0x13c12c0e0;  1 drivers
+RS_0x120010a10 .resolv tri, L_0x13c12bbb0, L_0x13c12bc60, L_0x13c12bed0;
+v0x13c220a20_0 .net8 "nand_out", 0 0, RS_0x120010a10;  3 drivers, strength-aware
+v0x13c220b10_0 .net8 "out", 0 0, RS_0x120010b30;  alias, 2 drivers, strength-aware
+S_0x13c21fd90 .scope module, "nand_gate1" "nand_gate" 4 70, 4 23 0, S_0x13c21fb60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c122270 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12bbb0 .functor PMOS 1, L_0x13c122270, RS_0x120010380, C4<0>, C4<0>;
+L_0x13c12bc60 .functor PMOS 1, L_0x13c122270, L_0x13c12c0e0, C4<0>, C4<0>;
+L_0x13c1221c0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12bdb0 .functor NMOS 1, L_0x13c1221c0, RS_0x120010380, C4<0>, C4<0>;
+L_0x13c12bed0 .functor NMOS 1, L_0x13c12bdb0, L_0x13c12c0e0, C4<0>, C4<0>;
+v0x13c21ffc0_0 .net8 "gnd", 0 0, L_0x13c1221c0;  1 drivers, strength-aware
+v0x13c220070_0 .net8 "in1", 0 0, RS_0x120010380;  alias, 2 drivers, strength-aware
+v0x13c220150_0 .net "in2", 0 0, L_0x13c12c0e0;  alias, 1 drivers
+v0x13c2201e0_0 .net8 "nmos1_out", 0 0, L_0x13c12bdb0;  1 drivers, strength-aware
+v0x13c220270_0 .net8 "out", 0 0, RS_0x120010a10;  alias, 3 drivers, strength-aware
+v0x13c220350_0 .net8 "pwr", 0 0, L_0x13c122270;  1 drivers, strength-aware
+S_0x13c220420 .scope module, "not_gate1" "not_gate" 4 71, 4 2 0, S_0x13c21fb60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1223c0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12bf80 .functor PMOS 1, L_0x13c1223c0, RS_0x120010a10, C4<0>, C4<0>;
+L_0x13c122310 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12c030 .functor NMOS 1, L_0x13c122310, RS_0x120010a10, C4<0>, C4<0>;
+v0x13c220620_0 .net8 "gnd", 0 0, L_0x13c122310;  1 drivers, strength-aware
+v0x13c2206b0_0 .net8 "in", 0 0, RS_0x120010a10;  alias, 3 drivers, strength-aware
+v0x13c220770_0 .net8 "out", 0 0, RS_0x120010b30;  alias, 2 drivers, strength-aware
+v0x13c220820_0 .net8 "vdd", 0 0, L_0x13c1223c0;  1 drivers, strength-aware
+S_0x13c220bc0 .scope module, "inv0" "not_gate" 4 102, 4 2 0, S_0x13c120040;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c121e90 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12b280 .functor PMOS 1, L_0x13c121e90, L_0x13c12b440, C4<0>, C4<0>;
+L_0x13c121de0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12b330 .functor NMOS 1, L_0x13c121de0, L_0x13c12b440, C4<0>, C4<0>;
+v0x13c220db0_0 .net8 "gnd", 0 0, L_0x13c121de0;  1 drivers, strength-aware
+v0x13c220e60_0 .net "in", 0 0, L_0x13c12b440;  1 drivers
+v0x13c220f00_0 .net8 "out", 0 0, RS_0x1200103b0;  alias, 2 drivers, strength-aware
+v0x13c221010_0 .net8 "vdd", 0 0, L_0x13c121e90;  1 drivers, strength-aware
+S_0x13c2210d0 .scope module, "inv1" "not_gate" 4 101, 4 2 0, S_0x13c120040;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c121d40 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12b040 .functor PMOS 1, L_0x13c121d40, L_0x13c12b1e0, C4<0>, C4<0>;
+L_0x13c121ca0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12b0d0 .functor NMOS 1, L_0x13c121ca0, L_0x13c12b1e0, C4<0>, C4<0>;
+v0x13c2212c0_0 .net8 "gnd", 0 0, L_0x13c121ca0;  1 drivers, strength-aware
+v0x13c221370_0 .net "in", 0 0, L_0x13c12b1e0;  1 drivers
+v0x13c221410_0 .net8 "out", 0 0, RS_0x120010380;  alias, 2 drivers, strength-aware
+v0x13c221520_0 .net8 "vdd", 0 0, L_0x13c121d40;  1 drivers, strength-aware
+S_0x13c221a40 .scope module, "enc" "encode_ternary" 4 155, 4 114 0, S_0x13c11c060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "is_minus";
+    .port_info 1 /INPUT 1 "is_zero";
+    .port_info 2 /INPUT 1 "is_plus";
+    .port_info 3 /OUTPUT 2 "out";
+L_0x13c12e750 .functor BUFZ 1, RS_0x120010fb0, C4<0>, C4<0>, C4<0>;
+L_0x13c12e960 .functor BUFZ 1, RS_0x12000f630, C4<0>, C4<0>, C4<0>;
+v0x13c221c60_0 .net *"_ivl_3", 0 0, L_0x13c12e750;  1 drivers
+v0x13c221d00_0 .net *"_ivl_8", 0 0, L_0x13c12e960;  1 drivers
+v0x13c221db0_0 .net8 "is_minus", 0 0, RS_0x120010f80;  alias, 2 drivers, strength-aware
+v0x13c221e60_0 .net8 "is_plus", 0 0, RS_0x120010fb0;  alias, 2 drivers, strength-aware
+v0x13c221f00_0 .net8 "is_zero", 0 0, RS_0x12000f630;  alias, 2 drivers, strength-aware
+v0x13c222010_0 .net "out", 1 0, L_0x13c12e7c0;  alias, 1 drivers
+L_0x13c12e7c0 .concat8 [ 1 1 0 0], L_0x13c12e960, L_0x13c12e750;
+S_0x13c222100 .scope module, "inv1" "not_gate" 4 141, 4 2 0, S_0x13c11c060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c122a50 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12d060 .functor PMOS 1, L_0x13c122a50, RS_0x120010f80, C4<0>, C4<0>;
+L_0x13c1229a0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12d190 .functor NMOS 1, L_0x13c1229a0, RS_0x120010f80, C4<0>, C4<0>;
+v0x13c222340_0 .net8 "gnd", 0 0, L_0x13c1229a0;  1 drivers, strength-aware
+v0x13c2223f0_0 .net8 "in", 0 0, RS_0x120010f80;  alias, 2 drivers, strength-aware
+v0x13c222490_0 .net8 "out", 0 0, RS_0x12000f480;  alias, 2 drivers, strength-aware
+v0x13c222580_0 .net8 "vdd", 0 0, L_0x13c122a50;  1 drivers, strength-aware
+S_0x13c222620 .scope module, "inv2" "not_gate" 4 153, 4 2 0, S_0x13c11c060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c123340 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12e550 .functor PMOS 1, L_0x13c123340, RS_0x1200111c0, C4<0>, C4<0>;
+L_0x13c123290 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12e600 .functor NMOS 1, L_0x13c123290, RS_0x1200111c0, C4<0>, C4<0>;
+v0x13c222810_0 .net8 "gnd", 0 0, L_0x13c123290;  1 drivers, strength-aware
+v0x13c2228c0_0 .net8 "in", 0 0, RS_0x1200111c0;  alias, 2 drivers, strength-aware
+v0x13c222960_0 .net8 "out", 0 0, RS_0x120010fb0;  alias, 2 drivers, strength-aware
+v0x13c222a30_0 .net8 "vdd", 0 0, L_0x13c123340;  1 drivers, strength-aware
+S_0x13c222ae0 .scope module, "or_m" "or_gate" 4 138, 4 75 0, S_0x13c11c060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c223850_0 .net8 "in1", 0 0, RS_0x12000f960;  alias, 2 drivers, strength-aware
+v0x13c223960_0 .net8 "in2", 0 0, RS_0x120010530;  alias, 2 drivers, strength-aware
+RS_0x1200112b0 .resolv tri, L_0x13c12ca40, L_0x13c12cc10, L_0x13c12cd70;
+v0x13c223a70_0 .net8 "nor_out", 0 0, RS_0x1200112b0;  3 drivers, strength-aware
+v0x13c223b20_0 .net8 "out", 0 0, RS_0x120010f80;  alias, 2 drivers, strength-aware
+S_0x13c222d10 .scope module, "nor_gate1" "nor_gate" 4 83, 4 43 0, S_0x13c222ae0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c1227b0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12c8b0 .functor PMOS 1, L_0x13c1227b0, RS_0x12000f960, C4<0>, C4<0>;
+L_0x13c12ca40 .functor PMOS 1, L_0x13c12c8b0, RS_0x120010530, C4<0>, C4<0>;
+L_0x13c122700 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12cc10 .functor NMOS 1, L_0x13c122700, RS_0x12000f960, C4<0>, C4<0>;
+L_0x13c12cd70 .functor NMOS 1, L_0x13c122700, RS_0x120010530, C4<0>, C4<0>;
+v0x13c222f40_0 .net8 "gnd", 0 0, L_0x13c122700;  1 drivers, strength-aware
+v0x13c222ff0_0 .net8 "in1", 0 0, RS_0x12000f960;  alias, 2 drivers, strength-aware
+v0x13c223090_0 .net8 "in2", 0 0, RS_0x120010530;  alias, 2 drivers, strength-aware
+v0x13c223140_0 .net8 "out", 0 0, RS_0x1200112b0;  alias, 3 drivers, strength-aware
+v0x13c2231d0_0 .net8 "pmos1_out", 0 0, L_0x13c12c8b0;  1 drivers, strength-aware
+v0x13c2232a0_0 .net8 "pwr", 0 0, L_0x13c1227b0;  1 drivers, strength-aware
+S_0x13c223370 .scope module, "not_gate1" "not_gate" 4 84, 4 2 0, S_0x13c222ae0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c122900 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12cde0 .functor PMOS 1, L_0x13c122900, RS_0x1200112b0, C4<0>, C4<0>;
+L_0x13c122850 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12ce90 .functor NMOS 1, L_0x13c122850, RS_0x1200112b0, C4<0>, C4<0>;
+v0x13c223570_0 .net8 "gnd", 0 0, L_0x13c122850;  1 drivers, strength-aware
+v0x13c223600_0 .net8 "in", 0 0, RS_0x1200112b0;  alias, 3 drivers, strength-aware
+v0x13c2236c0_0 .net8 "out", 0 0, RS_0x120010f80;  alias, 2 drivers, strength-aware
+v0x13c2237b0_0 .net8 "vdd", 0 0, L_0x13c122900;  1 drivers, strength-aware
+S_0x13c223bb0 .scope module, "or_mz" "or_gate" 4 150, 4 75 0, S_0x13c11c060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c224920_0 .net8 "in1", 0 0, RS_0x120010f80;  alias, 2 drivers, strength-aware
+v0x13c2249b0_0 .net8 "in2", 0 0, RS_0x12000f630;  alias, 2 drivers, strength-aware
+RS_0x120011550 .resolv tri, L_0x13c12dfb0, L_0x13c12e180, L_0x13c12e2e0;
+v0x13c224ad0_0 .net8 "nor_out", 0 0, RS_0x120011550;  3 drivers, strength-aware
+v0x13c224b80_0 .net8 "out", 0 0, RS_0x1200111c0;  alias, 2 drivers, strength-aware
+S_0x13c223dc0 .scope module, "nor_gate1" "nor_gate" 4 83, 4 43 0, S_0x13c223bb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c1230a0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12df00 .functor PMOS 1, L_0x13c1230a0, RS_0x120010f80, C4<0>, C4<0>;
+L_0x13c12dfb0 .functor PMOS 1, L_0x13c12df00, RS_0x12000f630, C4<0>, C4<0>;
+L_0x13c123000 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12e180 .functor NMOS 1, L_0x13c123000, RS_0x120010f80, C4<0>, C4<0>;
+L_0x13c12e2e0 .functor NMOS 1, L_0x13c123000, RS_0x12000f630, C4<0>, C4<0>;
+v0x13c224000_0 .net8 "gnd", 0 0, L_0x13c123000;  1 drivers, strength-aware
+v0x13c2240b0_0 .net8 "in1", 0 0, RS_0x120010f80;  alias, 2 drivers, strength-aware
+v0x13c2241d0_0 .net8 "in2", 0 0, RS_0x12000f630;  alias, 2 drivers, strength-aware
+v0x13c224280_0 .net8 "out", 0 0, RS_0x120011550;  alias, 3 drivers, strength-aware
+v0x13c224310_0 .net8 "pmos1_out", 0 0, L_0x13c12df00;  1 drivers, strength-aware
+v0x13c2243a0_0 .net8 "pwr", 0 0, L_0x13c1230a0;  1 drivers, strength-aware
+S_0x13c224470 .scope module, "not_gate1" "not_gate" 4 84, 4 2 0, S_0x13c223bb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c1231f0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12e350 .functor PMOS 1, L_0x13c1231f0, RS_0x120011550, C4<0>, C4<0>;
+L_0x13c123140 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12e480 .functor NMOS 1, L_0x13c123140, RS_0x120011550, C4<0>, C4<0>;
+v0x13c224670_0 .net8 "gnd", 0 0, L_0x13c123140;  1 drivers, strength-aware
+v0x13c224700_0 .net8 "in", 0 0, RS_0x120011550;  alias, 3 drivers, strength-aware
+v0x13c2247c0_0 .net8 "out", 0 0, RS_0x1200111c0;  alias, 2 drivers, strength-aware
+v0x13c224890_0 .net8 "vdd", 0 0, L_0x13c1231f0;  1 drivers, strength-aware
+S_0x13c224c50 .scope module, "or_z" "or_gate" 4 144, 4 75 0, S_0x13c11c060;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+v0x13c2259e0_0 .net8 "in1", 0 0, RS_0x12000ff60;  alias, 2 drivers, strength-aware
+v0x13c225af0_0 .net8 "in2", 0 0, RS_0x120010b30;  alias, 2 drivers, strength-aware
+RS_0x1200117f0 .resolv tri, L_0x13c12d430, L_0x13c12d600, L_0x13c12d760;
+v0x13c225c10_0 .net8 "nor_out", 0 0, RS_0x1200117f0;  3 drivers, strength-aware
+v0x13c225cc0_0 .net8 "out", 0 0, RS_0x12000f4b0;  alias, 2 drivers, strength-aware
+S_0x13c224ee0 .scope module, "nor_gate1" "nor_gate" 4 83, 4 43 0, S_0x13c224c50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in1";
+    .port_info 1 /INPUT 1 "in2";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x13c122ba0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12d260 .functor PMOS 1, L_0x13c122ba0, RS_0x12000ff60, C4<0>, C4<0>;
+L_0x13c12d430 .functor PMOS 1, L_0x13c12d260, RS_0x120010b30, C4<0>, C4<0>;
+L_0x13c122af0 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12d600 .functor NMOS 1, L_0x13c122af0, RS_0x12000ff60, C4<0>, C4<0>;
+L_0x13c12d760 .functor NMOS 1, L_0x13c122af0, RS_0x120010b30, C4<0>, C4<0>;
+v0x13c225110_0 .net8 "gnd", 0 0, L_0x13c122af0;  1 drivers, strength-aware
+v0x13c2251c0_0 .net8 "in1", 0 0, RS_0x12000ff60;  alias, 2 drivers, strength-aware
+v0x13c225260_0 .net8 "in2", 0 0, RS_0x120010b30;  alias, 2 drivers, strength-aware
+v0x13c2252f0_0 .net8 "out", 0 0, RS_0x1200117f0;  alias, 3 drivers, strength-aware
+v0x13c225380_0 .net8 "pmos1_out", 0 0, L_0x13c12d260;  1 drivers, strength-aware
+v0x13c225450_0 .net8 "pwr", 0 0, L_0x13c122ba0;  1 drivers, strength-aware
+S_0x13c225500 .scope module, "not_gate1" "not_gate" 4 84, 4 2 0, S_0x13c224c50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x13c122cf0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x13c12d7d0 .functor PMOS 1, L_0x13c122cf0, RS_0x1200117f0, C4<0>, C4<0>;
+L_0x13c122c40 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x13c12d880 .functor NMOS 1, L_0x13c122c40, RS_0x1200117f0, C4<0>, C4<0>;
+v0x13c225700_0 .net8 "gnd", 0 0, L_0x13c122c40;  1 drivers, strength-aware
+v0x13c225790_0 .net8 "in", 0 0, RS_0x1200117f0;  alias, 3 drivers, strength-aware
+v0x13c225850_0 .net8 "out", 0 0, RS_0x12000f4b0;  alias, 2 drivers, strength-aware
+v0x13c225940_0 .net8 "vdd", 0 0, L_0x13c122cf0;  1 drivers, strength-aware
+S_0x13c226760 .scope module, "mux" "mux_4_1" 3 28, 3 3 0, S_0x13c206c40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "data0";
+    .port_info 1 /INPUT 2 "data1";
+    .port_info 2 /INPUT 2 "data2";
+    .port_info 3 /INPUT 2 "data3";
+    .port_info 4 /INPUT 32 "control";
+    .port_info 5 /OUTPUT 2 "out";
+v0x13c226a60_0 .net "control", 31 0, v0x13c120ef0_0;  1 drivers
+v0x13c226b20_0 .net "data0", 1 0, L_0x13c12e7c0;  alias, 1 drivers
+v0x13c226c00_0 .net "data1", 1 0, L_0x13af89dc0;  alias, 1 drivers
+v0x13c226cd0_0 .net "data2", 1 0, L_0x13af8fa30;  alias, 1 drivers
+v0x13c226db0_0 .net "data3", 1 0, L_0x13c132720;  alias, 1 drivers
+v0x13c226ec0_0 .var "out", 1 0;
+E_0x13c2269e0/0 .event anyedge, v0x13c226a60_0, v0x13ae103c0_0, v0x13af7b7e0_0, v0x13af83830_0;
+E_0x13c2269e0/1 .event anyedge, v0x13c222010_0;
+E_0x13c2269e0 .event/or E_0x13c2269e0/0, E_0x13c2269e0/1;
+    .scope S_0x13c226760;
+T_0 ;
+    %wait E_0x13c2269e0;
+    %load/vec4 v0x13c226a60_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32;
+    %cmp/u;
+    %jmp/1 T_0.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 32;
+    %cmp/u;
+    %jmp/1 T_0.1, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 32;
+    %cmp/u;
+    %jmp/1 T_0.2, 6;
+    %dup/vec4;
+    %pushi/vec4 3, 0, 32;
+    %cmp/u;
+    %jmp/1 T_0.3, 6;
+    %jmp T_0.4;
+T_0.0 ;
+    %load/vec4 v0x13c226b20_0;
+    %assign/vec4 v0x13c226ec0_0, 0;
+    %jmp T_0.4;
+T_0.1 ;
+    %load/vec4 v0x13c226c00_0;
+    %assign/vec4 v0x13c226ec0_0, 0;
+    %jmp T_0.4;
+T_0.2 ;
+    %load/vec4 v0x13c226cd0_0;
+    %assign/vec4 v0x13c226ec0_0, 0;
+    %jmp T_0.4;
+T_0.3 ;
+    %load/vec4 v0x13c226db0_0;
+    %assign/vec4 v0x13c226ec0_0, 0;
+    %jmp T_0.4;
+T_0.4 ;
+    %pop/vec4 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x13c206c40;
+T_1 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x13c121360_0, 0, 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x13c120ef0_0, 0, 32;
+T_1.0 ;
+    %load/vec4 v0x13c120ef0_0;
+    %cmpi/u 4, 0, 32;
+    %jmp/0xz T_1.1, 5;
+    %load/vec4 v0x13c120ef0_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32;
+    %cmp/u;
+    %jmp/1 T_1.2, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 32;
+    %cmp/u;
+    %jmp/1 T_1.3, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 32;
+    %cmp/u;
+    %jmp/1 T_1.4, 6;
+    %dup/vec4;
+    %pushi/vec4 3, 0, 32;
+    %cmp/u;
+    %jmp/1 T_1.5, 6;
+    %jmp T_1.6;
+T_1.2 ;
+    %vpi_call/w 3 33 "$display", "Test min" {0 0 0};
+    %vpi_call/w 3 33 "$readmemb", "min.mem", v0x13c121240 {0 0 0};
+    %jmp T_1.6;
+T_1.3 ;
+    %vpi_call/w 3 34 "$display", "Test max" {0 0 0};
+    %vpi_call/w 3 34 "$readmemb", "max.mem", v0x13c121240 {0 0 0};
+    %jmp T_1.6;
+T_1.4 ;
+    %vpi_call/w 3 35 "$display", "Test any" {0 0 0};
+    %vpi_call/w 3 35 "$readmemb", "any.mem", v0x13c121240 {0 0 0};
+    %jmp T_1.6;
+T_1.5 ;
+    %vpi_call/w 3 36 "$display", "Test consensus" {0 0 0};
+    %vpi_call/w 3 36 "$readmemb", "consensus.mem", v0x13c121240 {0 0 0};
+    %jmp T_1.6;
+T_1.6 ;
+    %pop/vec4 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x13c120e60_0, 0, 32;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x13c1212d0_0, 0, 32;
+T_1.7 ;
+    %load/vec4 v0x13c1212d0_0;
+    %cmpi/u 9, 0, 32;
+    %jmp/0xz T_1.8, 5;
+    %ix/getv 4, v0x13c1212d0_0;
+    %load/vec4a v0x13c121240, 4;
+    %split/vec4 2;
+    %store/vec4 v0x13c1211b0_0, 0, 2;
+    %split/vec4 2;
+    %store/vec4 v0x13c120c40_0, 0, 2;
+    %store/vec4 v0x13c226ff0_0, 0, 2;
+    %delay 1, 0;
+    %load/vec4 v0x13c1210a0_0;
+    %parti/s 1, 0, 2;
+    %load/vec4 v0x13c1211b0_0;
+    %parti/s 1, 0, 2;
+    %cmp/ne;
+    %jmp/1 T_1.11, 6;
+    %flag_mov 8, 6;
+    %load/vec4 v0x13c1210a0_0;
+    %parti/s 1, 1, 2;
+    %load/vec4 v0x13c1211b0_0;
+    %parti/s 1, 1, 2;
+    %cmp/ne;
+    %flag_or 6, 8;
+T_1.11;
+    %jmp/0xz  T_1.9, 6;
+    %vpi_call/w 3 44 "$display", "Error: inputs a=0b%b b=0b%b", v0x13c226ff0_0, v0x13c120c40_0 {0 0 0};
+    %vpi_call/w 3 45 "$display", "  outputs: expected 0b%b, actual 0b%b", v0x13c1211b0_0, v0x13c1210a0_0 {0 0 0};
+    %pushi/vec4 1, 0, 32;
+    %load/vec4 v0x13c120e60_0;
+    %add;
+    %store/vec4 v0x13c120e60_0, 0, 32;
+T_1.9 ;
+    %load/vec4 v0x13c1212d0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x13c1212d0_0, 0, 32;
+    %jmp T_1.7;
+T_1.8 ;
+    %vpi_call/w 3 49 "$display", "%d tests completed with %d errors", v0x13c1212d0_0, v0x13c120e60_0 {0 0 0};
+    %load/vec4 v0x13c120e60_0;
+    %cmpi/ne 0, 0, 32;
+    %jmp/0xz  T_1.12, 6;
+    %vpi_call/w 3 53 "$display", "FAIL" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x13c121360_0, 0, 1;
+    %jmp T_1.13;
+T_1.12 ;
+    %vpi_call/w 3 58 "$display", "OK" {0 0 0};
+T_1.13 ;
+    %delay 5, 0;
+    %load/vec4 v0x13c120ef0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x13c120ef0_0, 0, 32;
+    %jmp T_1.0;
+T_1.1 ;
+    %load/vec4 v0x13c121360_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.14, 8;
+    %vpi_call/w 3 62 "$display", "Verdict: OK" {0 0 0};
+    %jmp T_1.15;
+T_1.14 ;
+    %vpi_call/w 3 63 "$display", "Verdict: FAIL" {0 0 0};
+T_1.15 ;
+    %vpi_call/w 3 64 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "ternary_logic_tester.v";
+    "./ternary_logic.v";
